@@ -1,68 +1,75 @@
+// --- Sidebar Logic ---
+const menuToggle = document.querySelector('.menuToggle');
+const navigation = document.querySelector('.navigation');
 
-const menuToggle= document.querySelector('.menuToggle')
-const navigation = document.querySelector('.navigation')
-const banner = document.querySelector('.banner');
-
-
-
-menuToggle.onclick= function(){
-    navigation.classList.toggle('open')
-}
-const list = document.querySelectorAll('.list')
-function activarLink(){
-    list.forEach((item)=>
-    item.classList.remove('active'))
-    this.classList.add('active') 
-}
-list.forEach((item)=>
-item.addEventListener('mousemove',activarLink)// click
-)
-
-//efecto paraflex
-/*
-let scene=document.getElementsByClassName('scene');
-let textMovil= document.getElementById('textMovil');
-let parallaxInstanceScene= new Parallax(scene);
-let parallaxInstanceText= new Parallax(textMovil);*/
-//
- 
-//cafecito
-/*
-function OcultarLoader(){
-    document.getElementById("loading").remove();
-}
-setTimeout(()=>{
-    OcultarLoader();
-},2500)*/
-
-
-
-
-
-// portfolio
-/*const cards = document.querySelector(".cards");
-const images = document.querySelectorAll(".card__img");
-const backgrounds = document.querySelectorAll(".card__bg");
-const range = 40;*/
-
-//funcion para calcular el valor de la posicion del mouse en ralacion a la ventana actual.
-/*const calcValue = (a, b) => ((a / b) * range - range / 2).toFixed(1);
-
-let timeout;
-document.addEventListener("mousemove", ({ x, y }) => {
-  if (timeout) {
-    window.cancelAnimationFrame(timeout);
-  }
-  timeout = window.requestAnimationFrame(() => {
-    const yValue = calcValue(y, window.innerHeight);
-    const xValue = calcValue(x, window.innerWidth);
-    cards.style.transform = `rotateX(${yValue/20}deg) rotateY(${xValue/20}deg)`;
-    [].forEach.call(images, (item) => {
-      item.style.transform = `translateX(${-xValue}px) translateY(${yValue}px)`;
+if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+        navigation.classList.toggle('open');
     });
-    [].forEach.call(backgrounds, (item) => {
-      item.style.backgroundPosition = `${xValue * 0.45}px ${-yValue * 0.45}`;
+}
+
+const list = document.querySelectorAll('.list');
+function activeLink() {
+    list.forEach((item) => item.classList.remove('active'));
+    this.classList.add('active');
+}
+list.forEach((item) => item.addEventListener('click', activeLink));
+
+
+// --- Swiper Slider Initialization (3D Coverflow) ---
+if (typeof Swiper !== 'undefined') {
+    var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+            rotate: 20,     // Angle of rotation
+            stretch: 0,
+            depth: 200,     // Depth perspective
+            modifier: 1,
+            slideShadows: true,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        // Auto-play optional
+        // autoplay: { delay: 2500, disableOnInteraction: false },
     });
-  });
-},false);
-*/
+}
+
+// --- Vanilla Tilt Initialization ---
+if (typeof VanillaTilt !== 'undefined') {
+    VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+        max: 15,            // Max tilt angle
+        speed: 400,         // Animation speed
+        glare: true,        // Add glare effect
+        "max-glare": 0.2,   // Glare opacity
+        scale: 1.05         // Scale up on hover
+    });
+}
+
+// --- Scroll Spy (Active Link) ---
+const sections = document.querySelectorAll('section');
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= (sectionTop - 300)) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    list.forEach(li => {
+        li.classList.remove('active');
+        const a = li.querySelector('a');
+        if (a && a.getAttribute('href').includes(current)) {
+            li.classList.add('active');
+        }
+    });
+});

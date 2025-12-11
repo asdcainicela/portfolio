@@ -1,24 +1,36 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gerald</title>
+    <title>Gerald | CV & IoT Engineer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Inter:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="./assets/styles/styles.css" />
     <link rel="stylesheet" href="./assets/styles/styles_home.css" />
 </head>
 
 <body>
-    <!--cafecito
-    <div class="loading-wrapp" id="loading">
-        <div class="inner">
-            <div class="fill"></div>
-        </div>
-    </div> -->
-    <!-- principal menu-->
+
     <div class="containerMain">
+        <!-- Sidebar Menu -->
         <div class="menuPrincipal">
             <div class="navigation">
                 <div class="menuToggle"></div>
@@ -38,85 +50,242 @@
                     <li class="list" style="--clr:#0fc70f;">
                         <a href="#experience">
                             <span class="icon"><ion-icon name="rocket-outline"></ion-icon></span>
-                            <span class="text">Experiences</span>
+                            <span class="text">Journey</span>
                         </a>
                     </li>
                     <li class="list" style="--clr:#2196f3;">
                         <a href="#portfolio">
-                            <span class="icon"><ion-icon name="receipt-outline"></ion-icon></span>
-                            <span class="text">PortFolio</span>
+                            <span class="icon"><ion-icon name="code-slash-outline"></ion-icon></span>
+                            <span class="text">Projects</span>
                         </a>
                     </li>
                     <li class="list" style="--clr:#b145e9;">
                         <a href="#contact">
-                            <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
+                            <span class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
                             <span class="text">Contact</span>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="information">
-            <section class="banner section" id="home">
-                <div class="name nameHome ">
-                    <div>
-                        <h1 class="textMenu">home <span style="color:#ffffff;">._</span> </h1>
+
+        <!-- Main Content Area -->
+        <main class="information">
+
+            <!-- Background Stars -->
+            <div class="stars-container">
+                <div id='stars'></div>
+                <div id='stars2'></div>
+                <div id='stars3'></div>
+            </div>
+
+            <!-- Hero Section -->
+            <section id="home" class="hero-section">
+                <div class="hero-content">
+                    <p class="greeting">Hi, I'm</p>
+                    <h1 class="big-heading">Gerald Cainicela.</h1>
+                    <h2 class="big-heading text-gradient">Visualizing Intelligence.</h2>
+                    <p class="hero-desc">
+                        <b>Computer Vision & IoT Engineer</b>. <br>
+                        Merging industrial robustness with the elegance of modern algorithms.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#portfolio" class="btn primary">View Work</a>
+                        <a href="https://github.com/asdcainicela" target="_blank" class="btn secondary">
+                            <i class='bx bxl-github'></i>
+                        </a>
                     </div>
-                    <div id='stars'> </div>
-                    <div id='title'  > 
-                        <h1 >Gerald <span > BCA</span></h1>
-                        <h2>
-                            Mechatronics Engineer | Control & Automation Developer
-                        </h2>
-                        <h2>
-                            <span> --Mining</span>
-                        </h2>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="capybara-container" data-tilt>
+                        <img src="./assets/img/capybara.gif" alt="Coding Capybara" class="capybara-gif">
+                        <div class="code-badge">
+                            <span>Status: CHILL</span>
+                        </div>
                     </div>
-                    <div id='stars2'></div>
-                    <div id='stars3'></div>
-                </div>
-                <!--<div class="name complementName">
-                    
-                </div>-->
-            </section>
-            <section class="about_me section" id="about">
-                <div class="name">
-                    <h1 class="textMenu">about <span style="color:#ffffff;">._</span> </h1> 
-                </div>
-                <div class="name complementName">
                 </div>
             </section>
-            <section class="about_me section" id="experience">
-                <div class="name">
-                    <h1 class="textMenu">experience <span style="color:#ffffff;">._</span> </h1>
-                </div>
-                <div class="name complementName">
+
+            <!-- About Section (Cleaner) -->
+            <section id="about" class="section">
+                <h2 class="section-title"><span>01.</span> Profile</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>
+                            Engineer at heart, Mathematician by curiosity.
+                            I've spent <b>1.5+ years</b> deploying critical systems in <b>Mining</b> environments.
+                        </p>
+                        <p>
+                            Now, I build the eyes of machines. From <b>Satellite Research</b> to <b>Deep Learning</b> on
+                            the Edge.
+                        </p>
+
+                        <div class="highlight-box glass-card" data-tilt>
+                            <div class="h-item"><i class='bx bx-map'></i> Lima, Perú</div>
+                            <div class="h-item"><i class='bx bxs-terminal'></i> Mechatronics & Math</div>
+                            <div class="h-item"><i class='bx bx-code-alt'></i> Python / C++ / CUDA</div>
+                        </div>
+                    </div>
+
+                    <!-- Skills as Badges (Visual) -->
+                    <div class="skills-visual">
+                        <div class="skill-badge" data-tilt>
+                            <i class='bx bxl-python'></i> <span>Python</span>
+                        </div>
+                        <div class="skill-badge" data-tilt>
+                            <i class='bx bxl-c-plus-plus'></i> <span>C++20</span>
+                        </div>
+                        <div class="skill-badge" data-tilt>
+                            <i class='bx bxs-microchip'></i> <span>CUDA</span>
+                        </div>
+                        <div class="skill-badge" data-tilt>
+                            <i class='bx bx-cube'></i> <span>TensorRT</span>
+                        </div>
+                        <div class="skill-badge" data-tilt>
+                            <i class='bx bx-wifi'></i> <span>IoT</span>
+                        </div>
+                        <div class="skill-badge" data-tilt>
+                            <i class='bx bxs-factory'></i> <span>PLC</span>
+                        </div>
+                    </div>
                 </div>
             </section>
-            <section class="section" class="cards" id="portfolio">
-                <div class="name">
-                    <h1 class="textMenu">portfolio <span style="color:#ffffff;">._</span> </h1> 
-                </div>
-                <div class="name complementName">
+
+            <!-- Experience Slider (Swiper) -->
+            <section id="experience" class="section">
+                <h2 class="section-title"><span>02.</span> Experience Highlights</h2>
+
+                <div class="experience-container">
+                    <div class="timeline-header">
+                        <h3>Mining Mechatronick</h3>
+                        <p>Control & Automation Engineer (2023-2025)</p>
+                    </div>
+
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide card-glass">
+                                <i class='bx bx-shield-quarter slide-icon'></i>
+                                <h3>Safety System</h3>
+                                <h4>Mina Huarón-Pan</h4>
+                                <p>Electrohydraulic foot-entrapment prevention using Radar & CODESYS.</p>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="swiper-slide card-glass">
+                                <i class='bx bx-joystick slide-icon'></i>
+                                <h3>Wireless Simulator</h3>
+                                <h4>Perumin</h4>
+                                <p>Real-time Jumbo/Scoop controls. CAN Bus <-> HMI Wireless Gateway.</p>
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="swiper-slide card-glass">
+                                <i class='bx bx-ruler slide-icon'></i>
+                                <h3>Angle System</h3>
+                                <h4>Mina El Brocal</h4>
+                                <p>Precision drilling for Simba S7D. 5-Encoder kinematics integration.</p>
+                            </div>
+
+                            <!-- Slide 4 -->
+                            <div class="swiper-slide card-glass">
+                                <i class='bx bx-cog slide-icon'></i>
+                                <h3>Raptor Training</h3>
+                                <h4>Resemin</h4>
+                                <p>Full simulator hardware. Mechanical & Electrical implementation.</p>
+                            </div>
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
                 </div>
             </section>
-            <section class="about_me section" id="contact">
-                <div class="name">
-                    <h1 class="textMenu">contact <span style="color:#ffffff;">._</span> </h1>  
-                </div>
-                <div class="name complementName">
+
+            <!-- Projects Section (3D Tilt Cards) -->
+            <section id="portfolio" class="section">
+                <h2 class="section-title"><span>03.</span> Featured Work</h2>
+                <div class="projects-grid">
+
+                    <!-- LNX Science -->
+                    <div class="project-card" data-tilt data-tilt-glare data-tilt-max="10">
+                        <div class="card-content">
+                            <div class="p-icon"><i class='bx bxl-youtube'></i></div>
+                            <h3>LNX Science</h3>
+                            <p>Educational channel visualizing Calculus & Engineering with Manim (Python).</p>
+                        </div>
+                    </div>
+
+                    <!-- IPC -->
+                    <div class="project-card" data-tilt data-tilt-glare data-tilt-max="10">
+                        <div class="card-content">
+                            <div class="p-icon"><i class='bx bx-transfer'></i></div>
+                            <h3>Zero-Copy IPC</h3>
+                            <p>High-performance Shared Memory for 4K video on Jetson AGX (C++/CUDA).</p>
+                        </div>
+                    </div>
+
+                    <!-- Drowsiness -->
+                    <div class="project-card" data-tilt data-tilt-glare data-tilt-max="10">
+                        <div class="card-content">
+                            <div class="p-icon"><i class='bx bxs-user-voice'></i></div>
+                            <h3>Drowsiness AI</h3>
+                            <p>Real-time edge detection on Jetson Nano. Optimized OpenCV pipeline.</p>
+                        </div>
+                    </div>
+
+                    <!-- Rumas -->
+                    <div class="project-card" data-tilt data-tilt-glare data-tilt-max="10">
+                        <div class="card-content">
+                            <div class="p-icon"><i class='bx bx-layer'></i></div>
+                            <h3>Ruma Segmentation</h3>
+                            <p>Automated material pile analysis using HQ-SAM and computer vision.</p>
+                        </div>
+                    </div>
+
+                    <!-- Coins -->
+                    <div class="project-card" data-tilt data-tilt-glare data-tilt-max="10">
+                        <div class="card-content">
+                            <div class="p-icon"><i class='bx bxs-coin-stack'></i></div>
+                            <h3>Matlab Coins</h3>
+                            <p>Coin counting & detection GUI App built with Image Processing Toolbox.</p>
+                        </div>
+                    </div>
+
+                    <!-- Sensors -->
+                    <div class="project-card" data-tilt data-tilt-glare data-tilt-max="10">
+                        <div class="card-content">
+                            <div class="p-icon"><i class='bx bx-station'></i></div>
+                            <h3>IoT & Sensors</h3>
+                            <p>ESP32/Arduino integration with Bluetooth, WiFi, Servos & Steppers.</p>
+                        </div>
+                    </div>
+
                 </div>
             </section>
-        </div>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section center-text">
+                <h2 class="section-title highlight"><span>04.</span> Connect</h2>
+                <h1 class="big-heading">Let's Create.</h1>
+                <div class="social-links-footer">
+                    <a href="https://github.com/asdcainicela" target="_blank"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.linkedin.com/in/gerald-cainicela/" target="_blank"><i
+                            class='bx bxl-linkedin'></i></a>
+                    <a href="mailto:gerald.cainicela.a@gmail.com"><i class='bx bx-envelope'></i></a>
+                </div>
+            </section>
+        </main>
     </div>
 
-    <!--<footer>
-        <p>&copy; 2023 Mi Página Web</p>
-    </footer>-->
-
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
