@@ -1,0 +1,281 @@
+// =====================================================
+// THEME TOGGLE - Dark/Light Mode Switch
+// =====================================================
+
+#themeToggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05); // Glass effect
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    z-index: 9999;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+
+    // Hover Effect
+    &:hover {
+        transform: scale(1.1) rotate(10deg);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    // Icon container
+    .indicator {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+
+        // Base Icon Style
+        &::before {
+            content: '🌙';
+            font-size: 24px;
+            transition: 0.5s;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+        }
+    }
+
+    // Active state (Light Mode)
+    &.active {
+        background: rgba(255, 255, 255, 0.8);
+        border-color: rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+        .indicator::before {
+            content: '☀️';
+            transform: rotate(180deg) scale(1.1);
+            filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.5));
+        }
+    }
+}
+
+// Light mode body styles
+body.light-mode {
+    --bg-color: #f8f9fa; // Soft off-white, not harsh white
+    --text-main: #111827; // Almost black for sharp contrast
+    --text-sec: #4b5563; // Cool gray
+    --active-color: #0f766e; // Teal darker for contrast
+    --card-bg: #ffffff;
+    --nav-bg: rgba(255, 255, 255, 0.85);
+
+    background-color: var(--bg-color);
+    color: var(--text-main);
+
+    // Update global variables for this scope
+    --accent: #0f766e;
+
+    .navigation {
+        background: var(--nav-bg);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .navigation ul li.active a .icon {
+        background: var(--clr); // Keep distinct colors
+        color: #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); // Softer shadow
+    }
+
+    .navigation ul li a .icon {
+        color: var(--text-sec);
+
+        &:hover {
+            color: var(--text-main);
+            background: rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    .navigation ul li a .text {
+        color: var(--text-main);
+        font-weight: 600;
+    }
+
+    .menuToggle {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .menuToggle::before,
+    .menuToggle::after {
+        background: var(--text-main);
+    }
+
+    // Modern "Apple-style" Cards
+    .glass-card,
+    .card-glass,
+    .project-card,
+    .stat-card,
+    .edu-card,
+    .exp-preview,
+    .exp-detail,
+    .counter-item {
+        // Added counter-item here too!
+        background: var(--card-bg);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08); // Premium Soft Shadow
+        color: var(--text-main);
+    }
+
+    // Fix for Experience Detail specific internals
+    .exp-detail p {
+        color: var(--text-sec);
+    }
+
+    .exp-detail h3 {
+        color: #000;
+    }
+
+    .exp-detail-date {
+        background: rgba(15, 118, 110, 0.1); // Light teal bg
+    }
+
+    .exp-detail-icon {
+        background: rgba(15, 118, 110, 0.05);
+    }
+
+    // Specific text colors inside cards
+    .project-card p,
+    .exp-preview-year,
+    .edu-card h4 {
+        color: var(--text-sec);
+    }
+
+    .project-card h3,
+    .edu-card h3 {
+        color: #000;
+        font-weight: 700;
+    }
+
+    .skill-badge {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: var(--text-main);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+        i {
+            color: var(--active-color);
+        }
+    }
+
+    // Tech Stack Badges
+    .tech-badge {
+        background: #e2e8f0;
+        color: #1e293b;
+        border: none;
+        font-weight: 600;
+    }
+
+    .section-title {
+        color: var(--text-main);
+
+        span {
+            color: var(--active-color);
+        }
+
+        &::after {
+            background-color: #cbd5e1;
+        }
+    }
+
+    .big-heading.text-gradient {
+        // Darker gradient for visibility on white
+        background: linear-gradient(to right, #0f766e, #0e7490);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .btn.primary {
+        border-color: var(--active-color);
+        color: var(--active-color);
+        font-weight: 600;
+
+        &:hover {
+            background: var(--active-color);
+            color: #fff;
+            box-shadow: 0 10px 20px rgba(15, 118, 110, 0.2);
+        }
+    }
+
+    .btn.secondary {
+        border-color: var(--text-main);
+        color: var(--text-main);
+
+        &:hover {
+            background: var(--text-main);
+            color: #fff;
+        }
+    }
+
+    .mobileToggle {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+        &::before,
+        &::after {
+            background: #fff; // Icon stays white as button is colored
+        }
+    }
+
+    // Stars should be less visible or different in light mode?
+    // Let's make them subtle gray dots
+    #stars,
+    #stars2,
+    #stars3 {
+        filter: invert(1) opacity(0.2);
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 900px) {
+    #themeToggle {
+        top: auto;
+        bottom: 25px;
+        left: 25px; // Bottom-left corner for mobile
+        right: auto;
+        width: 50px; // Slightly smaller on mobile
+        height: 50px;
+
+        // Remove old internal styles
+        .indicator {
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: none;
+            box-shadow: none;
+            transform: none;
+
+            &::before {
+                font-size: 20px;
+                top: auto;
+                left: auto;
+                transform: none;
+                position: relative;
+            }
+        }
+
+        &.active .indicator {
+            left: 0;
+            background: none;
+            box-shadow: none;
+
+            &::before {
+                content: '☀️';
+            }
+        }
+    }
+}

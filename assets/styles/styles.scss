@@ -11,7 +11,10 @@
 // 2. Reset & Global Styles
 @use 'base';
 
-// 3. Reusable Utilities (Gradients, Glass effects)
+// 3. Page Loader
+@use 'loader';
+
+// 4. Reusable Utilities (Gradients, Glass effects)
 @use 'utilities';
 
 // 4. Layout Structure (Sections, Containers)
@@ -29,5 +32,11 @@
 @use 'projects';
 @use 'contact';
 
-// 7. Responsive Breakpoints (Always last!)
+// 9. Stats & Tech Stack
+@use 'stats';
+
+// 10. Theme Toggle (Dark/Light Mode)
+@use 'theme-toggle';
+
+// 9. Responsive Breakpoints (Always last!)
 @use 'responsive';

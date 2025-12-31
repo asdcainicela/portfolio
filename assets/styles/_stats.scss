@@ -1,0 +1,178 @@
+// =====================================================
+// STATS - GitHub & Professional Stats
+// =====================================================
+
+.stats-section {
+    margin-top: 40px;
+}
+
+// Stats Grid
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: rgba(17, 34, 64, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px 20px;
+    text-align: center;
+    transition: 0.3s;
+
+    &:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+        box-shadow: 0 15px 40px rgba(100, 255, 218, 0.1);
+    }
+
+    i {
+        font-size: 2rem;
+        color: var(--accent);
+        margin-bottom: 15px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-main);
+        font-family: var(--font-mono);
+        display: block;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+        color: var(--text-sec);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 5px;
+    }
+}
+
+// Tech Stack Section
+.tech-stack {
+    margin-top: 50px;
+}
+
+.tech-category {
+    margin-bottom: 30px;
+
+    h4 {
+        font-size: 0.9rem;
+        color: var(--accent);
+        font-family: var(--font-mono);
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-badge {
+    background: rgba(100, 255, 218, 0.05);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    transition: 0.3s;
+
+    &:hover {
+        background: rgba(100, 255, 218, 0.15);
+        border-color: var(--accent);
+        transform: translateY(-2px);
+    }
+}
+
+// Education & Certifications
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.edu-card {
+    background: rgba(17, 34, 64, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    transition: 0.3s;
+
+    &:hover {
+        border-color: var(--accent);
+        transform: translateY(-5px);
+    }
+
+    .edu-icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(100, 255, 218, 0.1);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+
+        i {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+    }
+
+    h3 {
+        font-size: 1.1rem;
+        color: var(--text-main);
+        margin-bottom: 5px;
+    }
+
+    h4 {
+        font-size: 0.9rem;
+        color: var(--text-sec);
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+
+    .edu-date {
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        color: var(--accent);
+    }
+}
+
+// Certifications count badge
+.cert-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(100, 255, 218, 0.1);
+    border: 1px solid var(--accent);
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-top: 20px;
+
+    i {
+        color: var(--accent);
+    }
+
+    span {
+        color: var(--text-main);
+        font-family: var(--font-mono);
+    }
+}

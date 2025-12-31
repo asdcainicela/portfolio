@@ -28,7 +28,27 @@
 
 <body>
 
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="spinner"></div>
+        <div class="loader-text">
+            <span>GERALD</span>
+            Loading...
+        </div>
+        <div class="loader-bar">
+            <div class="bar-fill"></div>
+        </div>
+    </div>
+
     <div class="containerMain">
+        <!-- Mobile Toggle Button -->
+        <div class="mobileToggle"></div>
+
+        <!-- Theme Toggle (Dark/Light) -->
+        <div id="themeToggle">
+            <i class="indicator"></i>
+        </div>
+
         <!-- Sidebar Menu -->
         <div class="menuPrincipal">
             <div class="navigation">
@@ -82,8 +102,17 @@
             <section id="home" class="hero-section">
                 <div class="hero-content">
                     <p class="greeting">Hi, I'm</p>
-                    <h1 class="big-heading">Gerald Cainicela.</h1>
-                    <h2 class="big-heading text-gradient">Visualizing Intelligence.</h2>
+
+                    <!-- Parallax Name -->
+                    <div class="parallax-name">
+                        <div id="nameScene" data-relative-input="true">
+                            <div id="parallaxText" data-depth="0.3">
+                                <span>G</span><span>e</span><span>r</span><span>a</span><span>l</span><span>d</span><span>&nbsp;</span><span>C</span><span>a</span><span>i</span><span>n</span><span>i</span><span>c</span><span>e</span><span>l</span><span>a</span><span>.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="big-heading text-gradient">Edge AI & Embedded Systems.</h2>
                     <p class="hero-desc">
                         <b>Computer Vision & IoT Engineer</b>. <br>
                         Merging industrial robustness with the elegance of modern algorithms.
@@ -97,110 +126,170 @@
                 </div>
 
                 <div class="hero-visual">
-                    <div class="capybara-container" data-tilt>
+                    <div class="capybara-container capybara-small" data-tilt>
                         <img src="./assets/img/capybara.gif" alt="Coding Capybara" class="capybara-gif">
-                        <div class="code-badge">
-                            <span>Status: CHILL</span>
-                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- About Section (Cleaner) -->
+            <!-- About Section -->
             <section id="about" class="section">
                 <h2 class="section-title"><span>01.</span> Profile</h2>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class='bx bx-git-repo-forked'></i>
+                        <span class="stat-number counter" data-target="47">47</span>
+                        <span class="stat-label">Repositories</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class='bx bx-code-alt'></i>
+                        <span class="stat-number counter" data-target="2807">2807</span>
+                        <span class="stat-label">Contributions</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class='bx bx-briefcase'></i>
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Years Exp</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class='bx bx-certification'></i>
+                        <span class="stat-number counter" data-target="19">19</span>
+                        <span class="stat-label">Certificates</span>
+                    </div>
+                </div>
+
                 <div class="about-grid">
                     <div class="about-text">
                         <p>
-                            Engineer at heart, Mathematician by curiosity.
-                            I've spent <b>1.5+ years</b> deploying critical systems in <b>Mining</b> environments.
+                            <b>B.Sc. in Mechatronics Engineering</b> from Universidad Nacional de Ingeniería (UNI).
+                            Currently pursuing <b>Master's in Applied Mathematics</b>.
                         </p>
                         <p>
-                            Now, I build the eyes of machines. From <b>Satellite Research</b> to <b>Deep Learning</b> on
-                            the Edge.
+                            Specialized in <b>real-time computer vision</b> and <b>industrial embedded systems</b>.
+                            Focus: production, optimization, and stability.
                         </p>
 
                         <div class="highlight-box glass-card" data-tilt>
-                            <div class="h-item"><i class='bx bx-map'></i> Lima, Perú</div>
-                            <div class="h-item"><i class='bx bxs-terminal'></i> Mechatronics & Math</div>
+                            <div class="h-item"><i class='bx bx-map'></i> Lima, Perú 🇵🇪</div>
+                            <div class="h-item"><i class='bx bxs-graduation'></i> UNI + IMCA</div>
                             <div class="h-item"><i class='bx bx-code-alt'></i> Python / C++ / CUDA</div>
                         </div>
                     </div>
 
-                    <!-- Skills as Badges (Visual) -->
+                    <!-- Skills as Badges -->
                     <div class="skills-visual">
-                        <div class="skill-badge" data-tilt>
-                            <i class='bx bxl-python'></i> <span>Python</span>
+                        <div class="skill-badge" data-tilt><i class='bx bxl-python'></i> <span>Python</span></div>
+                        <div class="skill-badge" data-tilt><i class='bx bxl-c-plus-plus'></i> <span>C++20</span></div>
+                        <div class="skill-badge" data-tilt><i class='bx bxl-rust'></i> <span>Rust</span></div>
+                        <div class="skill-badge" data-tilt><i class='bx bxs-microchip'></i> <span>CUDA</span></div>
+                        <div class="skill-badge" data-tilt><i class='bx bx-cube'></i> <span>TensorRT</span></div>
+                        <div class="skill-badge" data-tilt><i class='bx bx-wifi'></i> <span>IoT</span></div>
+                        <div class="skill-badge" data-tilt><i class='bx bxs-factory'></i> <span>PLC</span></div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="tech-stack">
+                    <div class="tech-category">
+                        <h4><i class='bx bx-brain'></i> Computer Vision & AI</h4>
+                        <div class="tech-badges">
+                            <span class="tech-badge">CUDA</span>
+                            <span class="tech-badge">cuDNN</span>
+                            <span class="tech-badge">TensorRT</span>
+                            <span class="tech-badge">ONNX</span>
+                            <span class="tech-badge">OpenCV</span>
+                            <span class="tech-badge">YOLO</span>
+                            <span class="tech-badge">PyTorch</span>
+                            <span class="tech-badge">libtorch</span>
                         </div>
-                        <div class="skill-badge" data-tilt>
-                            <i class='bx bxl-c-plus-plus'></i> <span>C++20</span>
+                    </div>
+                    <div class="tech-category">
+                        <h4><i class='bx bxs-chip'></i> Edge AI & Embedded</h4>
+                        <div class="tech-badges">
+                            <span class="tech-badge">Jetson Orin</span>
+                            <span class="tech-badge">ESP32</span>
+                            <span class="tech-badge">FreeRTOS</span>
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">ARM Cortex</span>
+                            <span class="tech-badge">STM32</span>
                         </div>
-                        <div class="skill-badge" data-tilt>
-                            <i class='bx bxs-microchip'></i> <span>CUDA</span>
-                        </div>
-                        <div class="skill-badge" data-tilt>
-                            <i class='bx bx-cube'></i> <span>TensorRT</span>
-                        </div>
-                        <div class="skill-badge" data-tilt>
-                            <i class='bx bx-wifi'></i> <span>IoT</span>
-                        </div>
-                        <div class="skill-badge" data-tilt>
-                            <i class='bx bxs-factory'></i> <span>PLC</span>
+                    </div>
+                    <div class="tech-category">
+                        <h4><i class='bx bxs-factory'></i> Industrial & PLC</h4>
+                        <div class="tech-badges">
+                            <span class="tech-badge">CODESYS</span>
+                            <span class="tech-badge">IEC 61131-3</span>
+                            <span class="tech-badge">CAN/J1939</span>
+                            <span class="tech-badge">Modbus</span>
+                            <span class="tech-badge">RS485</span>
+                            <span class="tech-badge">MQTT</span>
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <!-- Experience Slider (Swiper) -->
+                <!-- Education -->
+                <div class="education-grid">
+                    <div class="edu-card">
+                        <div class="edu-icon"><i class='bx bxs-graduation'></i></div>
+                        <h3>Master's in Applied Mathematics</h3>
+                        <h4>IMCA - Instituto de Matemática</h4>
+                        <span class="edu-date">2025 - Present</span>
+                    </div>
+                    <div class="edu-card">
+                        <div class="edu-icon"><i class='bx bx-cog'></i></div>
+                        <h3>B.Sc. Mechatronics Engineering</h3>
+                        <h4>Universidad Nacional de Ingeniería</h4>
+                        <span class="edu-date">2019 - 2023</span>
+                    </div>
+                </div>
+            </section>
+            <!-- Experience Master-Detail -->
             <section id="experience" class="section">
-                <h2 class="section-title"><span>02.</span> Experience Highlights</h2>
+                <h2 class="section-title"><span>02.</span> Experience</h2>
 
                 <div class="experience-container">
-                    <div class="timeline-header">
-                        <h3>Mining Mechatronick</h3>
-                        <p>Control & Automation Engineer (2023-2025)</p>
-                    </div>
+                    <div class="experience-layout">
 
-                    <!-- Swiper -->
-                    <div class="swiper mySwiper">
-                        <div class="swiper-wrapper">
-
-                            <!-- Slide 1 -->
-                            <div class="swiper-slide card-glass">
-                                <i class='bx bx-shield-quarter slide-icon'></i>
-                                <h3>Safety System</h3>
-                                <h4>Mina Huarón-Pan</h4>
-                                <p>Electrohydraulic foot-entrapment prevention using Radar & CODESYS.</p>
+                        <!-- Left: Preview Grid -->
+                        <div class="exp-previews">
+                            <div class="exp-preview active" data-exp="0">
+                                <i class='bx bx-shield-quarter exp-preview-icon'></i>
+                                <div class="exp-preview-title">Safety System</div>
+                                <div class="exp-preview-year">2024</div>
                             </div>
-
-                            <!-- Slide 2 -->
-                            <div class="swiper-slide card-glass">
-                                <i class='bx bx-joystick slide-icon'></i>
-                                <h3>Wireless Simulator</h3>
-                                <h4>Perumin</h4>
-                                <p>Real-time Jumbo/Scoop controls. CAN Bus <-> HMI Wireless Gateway.</p>
+                            <div class="exp-preview" data-exp="1">
+                                <i class='bx bx-joystick exp-preview-icon'></i>
+                                <div class="exp-preview-title">Simulator</div>
+                                <div class="exp-preview-year">2024</div>
                             </div>
-
-                            <!-- Slide 3 -->
-                            <div class="swiper-slide card-glass">
-                                <i class='bx bx-ruler slide-icon'></i>
-                                <h3>Angle System</h3>
-                                <h4>Mina El Brocal</h4>
-                                <p>Precision drilling for Simba S7D. 5-Encoder kinematics integration.</p>
+                            <div class="exp-preview" data-exp="2">
+                                <i class='bx bx-ruler exp-preview-icon'></i>
+                                <div class="exp-preview-title">Angle System</div>
+                                <div class="exp-preview-year">2023</div>
                             </div>
-
-                            <!-- Slide 4 -->
-                            <div class="swiper-slide card-glass">
-                                <i class='bx bx-cog slide-icon'></i>
-                                <h3>Raptor Training</h3>
-                                <h4>Resemin</h4>
-                                <p>Full simulator hardware. Mechanical & Electrical implementation.</p>
+                            <div class="exp-preview" data-exp="3">
+                                <i class='bx bx-cog exp-preview-icon'></i>
+                                <div class="exp-preview-title">Raptor Sim</div>
+                                <div class="exp-preview-year">2023</div>
                             </div>
-
                         </div>
-                        <div class="swiper-pagination"></div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
+
+                        <!-- Right: Detail Panel -->
+                        <div class="exp-detail" id="expDetail">
+                            <div class="exp-detail-header">
+                                <div class="exp-detail-icon"><i class='bx bx-shield-quarter'></i></div>
+                                <div>
+                                    <span class="exp-detail-date">2024 - Present</span>
+                                    <h3>Safety System</h3>
+                                    <h4>Mina Huarón - Pan American Silver</h4>
+                                </div>
+                            </div>
+                            <p>Electrohydraulic foot-entrapment prevention using Radar sensors & CODESYS PLC
+                                programming. Real-time safety monitoring for underground mining operations.</p>
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -271,12 +360,29 @@
             <section id="contact" class="section center-text">
                 <h2 class="section-title highlight"><span>04.</span> Connect</h2>
                 <h1 class="big-heading">Let's Create.</h1>
-                <div class="social-links-footer">
-                    <a href="https://github.com/asdcainicela" target="_blank"><i class='bx bxl-github'></i></a>
-                    <a href="https://www.linkedin.com/in/gerald-cainicela/" target="_blank"><i
-                            class='bx bxl-linkedin'></i></a>
-                    <a href="mailto:gerald.cainicela.a@gmail.com"><i class='bx bx-envelope'></i></a>
+
+                <!-- Social Counters -->
+                <div class="social-counters">
+                    <a href="https://github.com/asdcainicela" target="_blank" class="counter-item">
+                        <i class='bx bxl-github'></i>
+                        <span class="counter" data-target="50">0</span>
+                        <span class="counter-text">Repos</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/gerald-cainicela/" target="_blank" class="counter-item">
+                        <i class='bx bxl-linkedin'></i>
+                        <span class="counter" data-target="500">0</span>
+                        <span class="counter-text">Connections</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@lnx_science" target="_blank" class="counter-item">
+                        <i class='bx bxl-tiktok'></i>
+                        <span class="counter" data-target="5000">0</span>
+                        <span class="counter-text">Followers</span>
+                    </a>
                 </div>
+
+                <a href="mailto:gerald.cainicela.a@gmail.com" class="btn primary big-btn">
+                    <i class='bx bx-envelope'></i> Say Hello
+                </a>
             </section>
         </main>
     </div>

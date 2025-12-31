@@ -1,5 +1,6 @@
 # Dependencies
 node_modules/
+node
 
 # Compiled CSS (generated from SCSS) - optional, some prefer to commit it
 # styles.css
