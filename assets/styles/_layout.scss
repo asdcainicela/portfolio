@@ -1,0 +1,49 @@
+// =====================================================
+// LAYOUT - Main Structure
+// =====================================================
+
+.containerMain {
+    display: flex;
+    min-height: 100vh;
+}
+
+.information {
+    margin-left: 120px;
+    width: calc(100% - 120px);
+    padding: 0 40px;
+    transition: 0.5s;
+}
+
+// Section base styles
+.section {
+    padding: 80px 0;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: var(--text-main);
+
+    span {
+        font-family: var(--font-mono);
+        color: var(--accent);
+        font-size: 1.4rem;
+        margin-right: 10px;
+        font-weight: 400;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 200px;
+        height: 1px;
+        background-color: #233554;
+        margin-left: 20px;
+    }
+}

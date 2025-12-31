@@ -1,0 +1,41 @@
+// =====================================================
+// BUTTONS - All Button Styles
+// =====================================================
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+
+    &.primary {
+        border: 1px solid var(--accent);
+        color: var(--accent);
+        background: transparent;
+
+        &:hover {
+            background: rgba(100, 255, 218, 0.1);
+        }
+    }
+
+    &.secondary {
+        color: var(--text-main);
+        border: 1px solid var(--text-sec);
+        margin-left: 10px;
+
+        &:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+    }
+
+    &.big-btn {
+        padding: 18px 50px;
+        font-size: 16px;
+        margin-top: 50px;
+    }
+}

@@ -1,0 +1,21 @@
+// =====================================================
+// CONTACT - Social Links & Footer
+// =====================================================
+
+.social-links-footer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+
+    a {
+        font-size: 28px;
+        color: var(--text-sec);
+        transition: 0.3s;
+
+        &:hover {
+            color: var(--accent);
+            transform: translateY(-5px);
+        }
+    }
+}

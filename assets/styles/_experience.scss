@@ -1,0 +1,87 @@
+// =====================================================
+// EXPERIENCE - Timeline Slider (Swiper)
+// =====================================================
+
+.experience-container {
+    margin-top: 20px;
+}
+
+.timeline-header {
+    text-align: center;
+    margin-bottom: 40px;
+
+    h3 {
+        font-size: 24px;
+        color: var(--accent);
+    }
+
+    p {
+        color: var(--text-sec);
+        font-family: var(--font-mono);
+    }
+}
+
+// Swiper Carousel
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    width: 300px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    transition: 0.3s;
+
+    h3 {
+        font-size: 20px;
+        color: var(--text-main);
+        margin-bottom: 10px;
+    }
+
+    h4 {
+        font-size: 14px;
+        color: var(--text-sec);
+        font-family: var(--font-mono);
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 14px;
+        color: #a8b2d1;
+        line-height: 1.6;
+    }
+
+    &-active {
+        transform: scale(1.05);
+        border-color: var(--accent);
+        background: rgba(17, 34, 64, 0.8);
+    }
+}
+
+.slide-icon {
+    font-size: 50px;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+// Swiper Controls
+.swiper-pagination-bullet {
+    background: var(--text-sec);
+
+    &-active {
+        background: var(--accent);
+    }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--accent);
+    transform: scale(0.7);
+}

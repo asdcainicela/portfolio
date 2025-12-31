@@ -1,0 +1,67 @@
+// =====================================================
+// RESPONSIVE - Mobile & Tablet Breakpoints
+// =====================================================
+
+@media (max-width: 900px) {
+
+    // Navigation becomes bottom bar
+    .menuPrincipal {
+        top: auto;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        width: auto;
+        height: 70px;
+        border-radius: 20px;
+        z-index: 9999;
+    }
+
+    .navigation {
+        width: 100% !important;
+        height: 70px;
+        flex-direction: row;
+        overflow-x: auto;
+        position: relative;
+
+        ul {
+            flex-direction: row;
+            justify-content: space-evenly;
+
+            li {
+                width: auto;
+                padding: 0;
+
+                a .text {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .menuToggle {
+        display: none;
+    }
+
+    // Layout adjustments
+    .information {
+        margin-left: 0;
+        padding: 20px;
+        padding-bottom: 120px;
+        width: 100%;
+    }
+
+    // Hero stacks vertically
+    .hero-section {
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .big-heading {
+        font-size: 40px;
+    }
+}

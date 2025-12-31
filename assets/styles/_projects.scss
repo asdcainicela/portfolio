@@ -1,0 +1,45 @@
+// =====================================================
+// PROJECTS - 3D Tilt Cards Grid
+// =====================================================
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: rgba(17, 34, 64, 0.6);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    min-height: 250px;
+    justify-content: center;
+
+    h3 {
+        color: var(--text-main);
+        font-size: 18px;
+        margin-bottom: 15px;
+        transform: translateZ(30px);
+    }
+
+    p {
+        color: var(--text-sec);
+        font-size: 13px;
+        line-height: 1.6;
+        transform: translateZ(20px);
+    }
+}
+
+.p-icon {
+    font-size: 40px;
+    color: var(--accent);
+    margin-bottom: 20px;
+    transform: translateZ(20px);
+}

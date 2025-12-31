@@ -1,0 +1,64 @@
+// =====================================================
+// ABOUT - Profile & Skills Section
+// =====================================================
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+// Highlight Box (Location, Skills summary)
+.highlight-box {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px;
+    border-left: 2px solid var(--accent);
+}
+
+.h-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    font-size: 14px;
+
+    i {
+        color: var(--accent);
+        font-size: 18px;
+    }
+}
+
+// Skills Badges Grid
+.skills-visual {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.skill-badge {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+    cursor: default;
+
+    i {
+        font-size: 24px;
+        color: var(--accent);
+    }
+
+    span {
+        color: var(--text-main);
+        font-family: var(--font-mono);
+        font-size: 13px;
+    }
+}

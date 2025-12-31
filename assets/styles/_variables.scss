@@ -1,0 +1,19 @@
+// =====================================================
+// VARIABLES - Design Tokens
+// =====================================================
+
+:root {
+    // Colors
+    --bg-color: #0a192f;
+    --text-main: #ccd6f6;
+    --text-sec: #8892b0;
+    --accent: #64ffda;
+    --nav-bg: #112240;
+
+    // Typography
+    --font-main: 'Inter', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+
+    // Transitions
+    --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}

@@ -1,4 +1,4 @@
-#  -— Portfolio
+# Portfolio
 
 👋 Hi there! I'm Gerald, a **Mechatronics Engineer** specialized in **Control Systems** and **Automation Development**.
 
