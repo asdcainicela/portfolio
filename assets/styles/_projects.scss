@@ -21,6 +21,13 @@
     transform: perspective(1000px);
     min-height: 250px;
     justify-content: center;
+    transition: var(--transition);
+    cursor: pointer;
+
+    &:hover {
+        background: rgba(17, 34, 64, 0.8);
+        border-color: var(--accent);
+    }
 
     h3 {
         color: var(--text-main);
@@ -34,6 +41,32 @@
         font-size: 13px;
         line-height: 1.6;
         transform: translateZ(20px);
+        margin-bottom: 15px;
+    }
+}
+
+.project-card-link {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    transition: transform 0.3s ease;
+
+    &:hover .project-link {
+        color: var(--accent);
+    }
+}
+
+.project-link {
+    color: var(--text-sec);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition);
+    transform: translateZ(10px);
+
+    i {
+        font-size: 16px;
     }
 }
 

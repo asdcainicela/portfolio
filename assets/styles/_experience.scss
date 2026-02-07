@@ -1,47 +1,87 @@
 // =====================================================
-// EXPERIENCE - Master-Detail Layout
+// EXPERIENCE - Independent Company Rows
 // =====================================================
 
 .experience-container {
     margin-top: 40px;
 }
 
-// Two-Column Layout
+#experienceContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; // Space between companies
+}
+
+.exp-company-section {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.exp-company-header {
+    color: var(--accent);
+    font-size: 1.1rem;
+    font-family: var(--font-mono);
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+    padding-bottom: 10px;
+    cursor: default;
+
+    small {
+        color: var(--text-sec);
+        font-family: var(--font-main);
+        font-size: 0.9rem;
+    }
+
+    &[data-url] {
+        cursor: pointer;
+
+        &:hover {
+            color: white;
+            border-bottom-color: var(--accent);
+        }
+    }
+}
+
+// Two-Column Layout (Per Company)
 .experience-layout {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1.3fr;
     gap: 30px;
     align-items: start;
 }
 
-// Left: Preview Grid (2x2)
-.exp-previews {
+// Left: Previews
+.exp-projects-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
 }
 
 .exp-preview {
-    background: rgba(17, 34, 64, 0.6);
-    border: 2px solid rgba(255, 255, 255, 0.05);
+    background: rgba(17, 34, 64, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 12px;
-    padding: 20px 15px;
+    padding: 22px 15px;
     text-align: center;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 
     &:hover {
         border-color: rgba(100, 255, 218, 0.3);
-        transform: translateY(-3px);
+        transform: translateY(-5px);
+        background: rgba(17, 34, 64, 0.6);
     }
 
     &.active {
         border-color: var(--accent);
         background: rgba(100, 255, 218, 0.05);
-        box-shadow: 0 0 20px rgba(100, 255, 218, 0.1);
+        box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
 
         .exp-preview-icon {
             color: var(--accent);
+            transform: scale(1.1);
         }
     }
 
@@ -53,31 +93,35 @@
     }
 
     .exp-preview-title {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         color: var(--text-main);
         font-weight: 500;
     }
 
     .exp-preview-year {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         color: var(--accent);
         font-family: var(--font-mono);
-        margin-top: 5px;
+        margin-top: 6px;
     }
 }
 
 // Right: Detail Card
 .exp-detail {
+    min-height: 280px;
+}
+
+.exp-detail-card {
     background: rgba(17, 34, 64, 0.8);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(100, 255, 218, 0.2);
+    border: 1px solid rgba(100, 255, 218, 0.15);
     border-radius: 16px;
     padding: 35px;
-    min-height: 280px;
     position: relative;
     overflow: hidden;
+    animation: fadeInScale 0.4s ease forwards;
+    height: 100%;
 
-    // Animated accent line on top
     &::before {
         content: '';
         position: absolute;
@@ -123,13 +167,13 @@
 }
 
 .exp-detail h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--text-main);
     margin-bottom: 5px;
 }
 
 .exp-detail h4 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--text-sec);
     font-weight: 400;
     margin-bottom: 20px;
@@ -138,21 +182,41 @@
 .exp-detail p {
     font-size: 1rem;
     color: #a8b2d1;
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
-// Responsive - Stack on mobile
-@media (max-width: 900px) {
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.98) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Responsive
+@media (max-width: 1000px) {
     .experience-layout {
         grid-template-columns: 1fr;
     }
 
-    .exp-previews {
-        order: 2;
-    }
-
     .exp-detail {
-        order: 1;
-        min-height: auto;
+        order: -1;
+        margin-bottom: 20px;
     }
 }

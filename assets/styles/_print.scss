@@ -1,0 +1,216 @@
+// =====================================================
+// HARVARD STYLE CV / PDF EXPORT
+// =====================================================
+
+@mixin harvard-styles {
+    background: white !important;
+    color: #000 !important;
+    font-family: 'Inter', Helvetica, Arial, sans-serif !important;
+    line-height: 1.4 !important;
+
+    // Header section
+    .harvard-header {
+        text-align: center;
+        margin-bottom: 25px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid #000;
+
+        .harvard-name {
+            font-size: 32px !important;
+            font-weight: 800 !important;
+            margin-bottom: 8px !important;
+            text-transform: uppercase !important;
+            letter-spacing: 3px !important;
+            color: #000 !important;
+        }
+
+        .harvard-contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 11px !important;
+            margin: 0 !important;
+            color: #444 !important;
+            font-weight: 600 !important;
+
+            i {
+                font-size: 12px;
+                vertical-align: middle;
+                margin-right: 4px;
+            }
+        }
+
+        .harvard-title-heading {
+            font-size: 16px !important;
+            margin-top: 12px !important;
+            font-weight: 700 !important;
+            color: #000 !important;
+            text-transform: uppercase;
+        }
+    }
+
+    // Generic section structure
+    .harvard-section {
+        margin-bottom: 35px !important; // Increased spacing
+        padding-bottom: 5px !important; // Force painting of space
+        display: block !important;
+
+        .harvard-section-title {
+            font-size: 14px !important;
+            font-weight: 800 !important;
+            border-bottom: 1.5px solid #000 !important;
+            margin-bottom: 15px !important;
+            padding-bottom: 4px !important;
+            letter-spacing: 1.5px !important;
+            text-transform: uppercase !important;
+        }
+
+        .harvard-summary-text {
+            font-size: 12px !important;
+            line-height: 1.5 !important;
+            margin-bottom: 0 !important;
+            text-align: justify;
+            color: #222 !important;
+        }
+    }
+
+    // Experience blocks
+    .harvard-company-block {
+        margin-bottom: 18px;
+        page-break-inside: auto !important; // Allow breaking across pages
+
+        .harvard-company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-size: 13px !important;
+            margin-bottom: 8px !important;
+
+            strong {
+                text-transform: uppercase;
+                font-size: 14px;
+            }
+
+            span {
+                font-weight: 700;
+            }
+        }
+    }
+
+    .harvard-project {
+        margin-bottom: 20px !important;
+        padding-bottom: 5px !important;
+        padding-left: 12px;
+        border-left: 1px solid #eee;
+
+        .harvard-project-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-size: 12px !important;
+            margin-bottom: 3px !important;
+
+            strong {
+                color: #000;
+            }
+
+            em {
+                font-style: normal;
+                font-weight: 700;
+            }
+        }
+
+        .harvard-project-meta {
+            font-size: 11px !important;
+            font-style: italic !important;
+            color: #444 !important;
+            margin-bottom: 5px !important;
+        }
+
+        .harvard-project-desc {
+            font-size: 11px !important;
+            color: #222 !important;
+            line-height: 1.4 !important;
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .harvard-skills-list {
+        font-size: 11.5px !important;
+        line-height: 1.6 !important;
+        color: #111 !important;
+    }
+}
+
+// Ensure the portfolio itself remains looking great in regular view
+#cv-export-container {
+    display: none; // Hidden by default in UI
+}
+
+// When exporting, hide everything else and style the CV container
+body.is-exporting-pdf {
+
+    // Force body to have height and white background
+    background: #ffffff !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    overflow: visible !important;
+
+    .containerMain,
+    .menuPrincipal,
+    .mobileToggle,
+    #themeToggle,
+    .stars-container,
+    .page-loader {
+        display: none !important;
+    }
+
+    #cv-export-container {
+        display: block !important;
+        background: #ffffff !important;
+        padding: 0 !important;
+        position: relative !important; // CHANGED: Relative to force document height
+        top: auto !important;
+        left: auto !important;
+        margin: 0 auto !important; // Center it
+        width: 624px !important; // Exactly 6.5 inches at 96 DPI
+        min-height: 100vh;
+        overflow: visible !important;
+
+        .harvard-cv {
+            @include harvard-styles;
+            width: 624px !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            box-sizing: border-box !important;
+            background: #ffffff !important;
+            color: #000000 !important;
+            text-align: left !important;
+
+            // Ensure NO icons are rendered to avoid font issues in capture
+            i {
+                display: none !important;
+            }
+        }
+    }
+}
+
+// Standard browser print support
+@media print {
+    body {
+
+        .containerMain,
+        .menuPrincipal,
+        .mobileToggle {
+            display: none !important;
+        }
+
+        #cv-export-container {
+            display: block !important;
+
+            .harvard-cv {
+                @include harvard-styles;
+            }
+        }
+    }
+}

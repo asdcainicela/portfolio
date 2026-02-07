@@ -10,6 +10,11 @@
     width: 80px;
     border-radius: 15px;
     z-index: 1000;
+    transition: 0.5s; // Smooth transition for when it expands
+
+    &.open {
+        width: 165px; // Reduced from 180px
+    }
 }
 
 .navigation {
@@ -18,7 +23,7 @@
     background: rgba(17, 34, 64, 0.85);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    width: 80px;
+    width: 100%; // Fill the container
     box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
     transition: 0.5s;
     display: flex;
@@ -29,7 +34,7 @@
     overflow: hidden;
 
     &.open {
-        width: 250px;
+        width: 200px; // Match container
     }
 
     ul {
@@ -116,7 +121,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 0 25px;
+    padding: 0 15px; // Centered for 60px width (30px line / 2)
 
     &::before {
         content: "";

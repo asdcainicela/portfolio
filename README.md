@@ -49,3 +49,8 @@ If you're interested in collaborating or have any questions, feel free to reach 
 
 > _"Engineering is the art of directing the great sources of power in nature for the use and convenience of man."_  
 > — Thomas Tredgold
+
+
+
+
+npx sass --watch assets/styles/styles.scss:assets/styles/styles.css

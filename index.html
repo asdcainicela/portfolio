@@ -63,25 +63,31 @@
                     <li class="list" style="--clr:#ffa117;">
                         <a href="#about">
                             <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                            <span class="text">About</span>
+                            <span class="text">Profile</span>
                         </a>
                     </li>
                     <li class="list" style="--clr:#0fc70f;">
                         <a href="#experience">
                             <span class="icon"><ion-icon name="rocket-outline"></ion-icon></span>
-                            <span class="text">Journey</span>
+                            <span class="text">Experience</span>
                         </a>
                     </li>
                     <li class="list" style="--clr:#2196f3;">
                         <a href="#portfolio">
                             <span class="icon"><ion-icon name="code-slash-outline"></ion-icon></span>
-                            <span class="text">Projects</span>
+                            <span class="text">Work</span>
                         </a>
                     </li>
                     <li class="list" style="--clr:#b145e9;">
                         <a href="#contact">
                             <span class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
-                            <span class="text">Contact</span>
+                            <span class="text">Connect</span>
+                        </a>
+                    </li>
+                    <li class="list" style="--clr:#00d2ff;">
+                        <a href="javascript:void(0)" onclick="downloadPDF()">
+                            <span class="icon"><ion-icon name="download-outline"></ion-icon></span>
+                            <span class="text">Download CV</span>
                         </a>
                     </li>
                 </ul>
@@ -100,41 +106,50 @@
 
             <!-- Hero Section -->
             <section id="home" class="hero-section">
-                <div class="hero-content">
-                    <p class="greeting">Hi, I'm</p>
+                <div class="section">
+                    <h2 class="section-title"><span>01.</span> Home</h2>
 
-                    <!-- Parallax Name -->
-                    <div class="parallax-name">
-                        <div id="nameScene" data-relative-input="true">
-                            <div id="parallaxText" data-depth="0.3">
-                                <span>G</span><span>e</span><span>r</span><span>a</span><span>l</span><span>d</span><span>&nbsp;</span><span>C</span><span>a</span><span>i</span><span>n</span><span>i</span><span>c</span><span>e</span><span>l</span><span>a</span><span>.</span>
+                    <div class="hero-main">
+                        <div class="hero-content">
+                            <p class="greeting">Hi, I'm</p>
+
+                            <!-- Parallax Name -->
+                            <div class="parallax-name">
+                                <div id="nameScene" data-relative-input="true">
+                                    <div id="parallaxText" data-depth="0.3">
+                                        <span>G</span><span>e</span><span>r</span><span>a</span><span>l</span><span>d</span><span>&nbsp;</span><span>C</span><span>a</span><span>i</span><span>n</span><span>i</span><span>c</span><span>e</span><span>l</span><span>a</span><span>.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2 class="big-heading text-gradient">Edge AI & Industrial IoT.</h2>
+                            <p class="hero-desc">
+                                <b>Mechatronics Engineer & Applied Mathematician</b>. <br>
+                                Architecting high-performance systems for real-time mining and industrial surveillance.
+                            </p>
+                            <div class="hero-cta">
+                                <a href="#portfolio" class="btn primary">View Work</a>
+                                <a href="javascript:void(0)" onclick="downloadPDF()" class="btn secondary">
+                                    <i class='bx bx-download'></i> CV
+                                </a>
+                                <a href="https://github.com/asdcainicela" target="_blank" class="btn secondary">
+                                    <i class='bx bxl-github'></i>
+                                </a>
                             </div>
                         </div>
-                    </div>
 
-                    <h2 class="big-heading text-gradient">Edge AI & Embedded Systems.</h2>
-                    <p class="hero-desc">
-                        <b>Computer Vision & IoT Engineer</b>. <br>
-                        Merging industrial robustness with the elegance of modern algorithms.
-                    </p>
-                    <div class="hero-cta">
-                        <a href="#portfolio" class="btn primary">View Work</a>
-                        <a href="https://github.com/asdcainicela" target="_blank" class="btn secondary">
-                            <i class='bx bxl-github'></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="hero-visual">
-                    <div class="capybara-container capybara-small" data-tilt>
-                        <img src="./assets/img/capybara.gif" alt="Coding Capybara" class="capybara-gif">
+                        <div class="hero-visual">
+                            <div class="capybara-container capybara-small" data-tilt>
+                                <img src="./assets/img/capybara.gif" alt="Coding Capybara" class="capybara-gif">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- About Section -->
             <section id="about" class="section">
-                <h2 class="section-title"><span>01.</span> Profile</h2>
+                <h2 class="section-title"><span>02.</span> Profile</h2>
 
                 <!-- Stats Grid -->
                 <div class="stats-grid">
@@ -145,7 +160,7 @@
                     </div>
                     <div class="stat-card">
                         <i class='bx bx-code-alt'></i>
-                        <span class="stat-number counter" data-target="2807">2807</span>
+                        <span class="stat-number counter" data-target="3807">3807</span>
                         <span class="stat-label">Contributions</span>
                     </div>
                     <div class="stat-card">
@@ -163,17 +178,28 @@
                 <div class="about-grid">
                     <div class="about-text">
                         <p>
-                            <b>B.Sc. in Mechatronics Engineering</b> from Universidad Nacional de Ingeniería (UNI).
-                            Currently pursuing <b>Master's in Applied Mathematics</b>.
+                            <b>B.Sc. in Mechatronics Engineering</b> (UNI) & <b>Master's in Applied Mathematics</b>
+                            (IMCA).
                         </p>
                         <p>
-                            Specialized in <b>real-time computer vision</b> and <b>industrial embedded systems</b>.
-                            Focus: production, optimization, and stability.
+                            Specialized in architecting high-performance Edge AI systems that bring industrial stability
+                            to modern algorithms.
+                            From developing zero-latency communication protocols for heavy mining surveillance to
+                            implementing global IoT telemetry networks for cold chain logistics, I focus on building
+                            reliable, real-time intelligence for complex environments.
                         </p>
 
                         <div class="highlight-box glass-card" data-tilt>
                             <div class="h-item"><i class='bx bx-map'></i> Lima, Perú 🇵🇪</div>
-                            <div class="h-item"><i class='bx bxs-graduation'></i> UNI + IMCA</div>
+                            <div class="h-item">
+                                <i class='bx bxs-graduation'></i>
+                                <span>UNI + IMCA <br>
+                                    <small
+                                        style="font-size: 11px; opacity: 0.7; font-family: var(--font-main); line-height: 1.2; display: block; margin-top: 2px;">
+                                        Universidad Nacional de Ingeniería + Instituto de Matemática y Ciencias Afines
+                                    </small>
+                                </span>
+                            </div>
                             <div class="h-item"><i class='bx bx-code-alt'></i> Python / C++ / CUDA</div>
                         </div>
                     </div>
@@ -206,12 +232,25 @@
                         </div>
                     </div>
                     <div class="tech-category">
-                        <h4><i class='bx bxs-chip'></i> Edge AI & Embedded</h4>
+                        <h4><i class='bx bx-station'></i> Industrial IoT & Cloud</h4>
                         <div class="tech-badges">
-                            <span class="tech-badge">Jetson Orin</span>
-                            <span class="tech-badge">ESP32</span>
-                            <span class="tech-badge">FreeRTOS</span>
+                            <span class="tech-badge">LoRaWAN</span>
+                            <span class="tech-badge">MQTT (EMQX)</span>
+                            <span class="tech-badge">Azure IoT Hub</span>
+                            <span class="tech-badge">Modbus RS485</span>
+                            <span class="tech-badge">Shared Memory</span>
+                            <span class="tech-badge">Double Buffering</span>
                             <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">FRP</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4><i class='bx bxs-chip'></i> Hardware & Edge</h4>
+                        <div class="tech-badges">
+                            <span class="tech-badge">Jetson Orin/Nano</span>
+                            <span class="tech-badge">ESP32 (RAK3172)</span>
+                            <span class="tech-badge">FreeRTOS</span>
+                            <span class="tech-badge">Node-RED</span>
                             <span class="tech-badge">ARM Cortex</span>
                             <span class="tech-badge">STM32</span>
                         </div>
@@ -247,57 +286,30 @@
             </section>
             <!-- Experience Master-Detail -->
             <section id="experience" class="section">
-                <h2 class="section-title"><span>02.</span> Experience</h2>
-
-                <div class="experience-container">
-                    <div class="experience-layout">
-
-                        <!-- Left: Preview Grid -->
-                        <div class="exp-previews">
-                            <div class="exp-preview active" data-exp="0">
-                                <i class='bx bx-shield-quarter exp-preview-icon'></i>
-                                <div class="exp-preview-title">Safety System</div>
-                                <div class="exp-preview-year">2024</div>
-                            </div>
-                            <div class="exp-preview" data-exp="1">
-                                <i class='bx bx-joystick exp-preview-icon'></i>
-                                <div class="exp-preview-title">Simulator</div>
-                                <div class="exp-preview-year">2024</div>
-                            </div>
-                            <div class="exp-preview" data-exp="2">
-                                <i class='bx bx-ruler exp-preview-icon'></i>
-                                <div class="exp-preview-title">Angle System</div>
-                                <div class="exp-preview-year">2023</div>
-                            </div>
-                            <div class="exp-preview" data-exp="3">
-                                <i class='bx bx-cog exp-preview-icon'></i>
-                                <div class="exp-preview-title">Raptor Sim</div>
-                                <div class="exp-preview-year">2023</div>
-                            </div>
-                        </div>
-
-                        <!-- Right: Detail Panel -->
-                        <div class="exp-detail" id="expDetail">
-                            <div class="exp-detail-header">
-                                <div class="exp-detail-icon"><i class='bx bx-shield-quarter'></i></div>
-                                <div>
-                                    <span class="exp-detail-date">2024 - Present</span>
-                                    <h3>Safety System</h3>
-                                    <h4>Mina Huarón - Pan American Silver</h4>
-                                </div>
-                            </div>
-                            <p>Electrohydraulic foot-entrapment prevention using Radar sensors & CODESYS PLC
-                                programming. Real-time safety monitoring for underground mining operations.</p>
-                        </div>
-
-                    </div>
+                <h2 class="section-title"><span>03.</span> Experience</h2>
+                <div id="experienceContainer">
+                    <!-- JS will inject company rows here -->
                 </div>
             </section>
 
             <!-- Projects Section (3D Tilt Cards) -->
             <section id="portfolio" class="section">
-                <h2 class="section-title"><span>03.</span> Featured Work</h2>
+                <h2 class="section-title"><span>04.</span> Featured Work</h2>
                 <div class="projects-grid">
+                    <!-- QtFaceAuth -->
+                    <a href="https://github.com/asdcainicela/QtFaceAuth" target="_blank" class="project-card-link">
+                        <div class="project-card" data-tilt data-tilt-glare data-tilt-max="10">
+                            <div class="card-content">
+                                <div class="p-icon"><i class='bx bx-user-check'></i></div>
+                                <h3>QtFaceAuth</h3>
+                                <p>Hands-free biometric authentication system built with C++, Qt, and OpenCV. Features
+                                    liveness detection and secure user management.</p>
+                                <span class="project-link">
+                                    <i class='bx bxl-github'></i> View Repo
+                                </span>
+                            </div>
+                        </div>
+                    </a>
 
                     <!-- LNX Science -->
                     <div class="project-card" data-tilt data-tilt-glare data-tilt-max="10">
@@ -358,7 +370,7 @@
 
             <!-- Contact Section -->
             <section id="contact" class="section center-text">
-                <h2 class="section-title highlight"><span>04.</span> Connect</h2>
+                <h2 class="section-title highlight"><span>05.</span> Connect</h2>
                 <h1 class="big-heading">Let's Create.</h1>
 
                 <!-- Social Counters -->
@@ -387,10 +399,16 @@
         </main>
     </div>
 
+    <!-- Hidden CV Export Template -->
+    <div id="cv-export-container" style="display: none;">
+        <!-- This will be populated dynamically or via print-only styles -->
+    </div>
+
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 

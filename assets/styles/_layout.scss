@@ -8,16 +8,22 @@
 }
 
 .information {
-    margin-left: 120px;
-    width: calc(100% - 120px);
+    margin-left: 100px; // Standard collapsed state
+    width: calc(100% - 100px);
     padding: 0 40px;
     transition: 0.5s;
+
+    // Push content further right when sidebar is open to prevent overlap
+    body.sidebar-open & {
+        margin-left: 240px; // 200px menu width + 20px pos + 20px gap
+        width: calc(100% - 240px);
+    }
 }
 
 // Section base styles
 .section {
     padding: 80px 0;
-    max-width: 1000px;
+    max-width: 1200px; // Increased for a more immersive feel
     margin: 0 auto;
     width: 90%;
 }

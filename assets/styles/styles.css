@@ -138,6 +138,7 @@ ul {
 .text-gradient {
   background: linear-gradient(90deg, var(--text-main) 0%, var(--accent) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -161,15 +162,19 @@ ul {
 }
 
 .information {
-  margin-left: 120px;
-  width: calc(100% - 120px);
+  margin-left: 100px;
+  width: calc(100% - 100px);
   padding: 0 40px;
   transition: 0.5s;
+}
+body.sidebar-open .information {
+  margin-left: 240px;
+  width: calc(100% - 240px);
 }
 
 .section {
   padding: 80px 0;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   width: 90%;
 }
@@ -239,6 +244,10 @@ ul {
   width: 80px;
   border-radius: 15px;
   z-index: 1000;
+  transition: 0.5s;
+}
+.menuPrincipal.open {
+  width: 165px;
 }
 
 .navigation {
@@ -247,7 +256,7 @@ ul {
   background: rgba(17, 34, 64, 0.85);
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  width: 80px;
+  width: 100%;
   box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
   transition: 0.5s;
   display: flex;
@@ -258,7 +267,7 @@ ul {
   overflow: hidden;
 }
 .navigation.open {
-  width: 250px;
+  width: 200px;
 }
 .navigation ul {
   display: flex;
@@ -332,7 +341,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 0 25px;
+  padding: 0 15px;
 }
 .menuToggle::before {
   content: "";
@@ -408,9 +417,25 @@ ul {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   position: relative;
   overflow: hidden;
+}
+.hero-section .section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  max-width: 1200px;
+}
+
+.hero-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: nowrap;
 }
 
 .parallax-name {
@@ -564,39 +589,76 @@ ul {
   margin-top: 40px;
 }
 
+#experienceContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.exp-company-section {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.exp-company-header {
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-family: var(--font-mono);
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+  padding-bottom: 10px;
+  cursor: default;
+}
+.exp-company-header small {
+  color: var(--text-sec);
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+}
+.exp-company-header[data-url] {
+  cursor: pointer;
+}
+.exp-company-header[data-url]:hover {
+  color: white;
+  border-bottom-color: var(--accent);
+}
+
 .experience-layout {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1fr 1.3fr;
   gap: 30px;
   align-items: start;
 }
 
-.exp-previews {
+.exp-projects-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
 }
 
 .exp-preview {
-  background: rgba(17, 34, 64, 0.6);
-  border: 2px solid rgba(255, 255, 255, 0.05);
+  background: rgba(17, 34, 64, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  padding: 20px 15px;
+  padding: 22px 15px;
   text-align: center;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .exp-preview:hover {
   border-color: rgba(100, 255, 218, 0.3);
-  transform: translateY(-3px);
+  transform: translateY(-5px);
+  background: rgba(17, 34, 64, 0.6);
 }
 .exp-preview.active {
   border-color: var(--accent);
   background: rgba(100, 255, 218, 0.05);
-  box-shadow: 0 0 20px rgba(100, 255, 218, 0.1);
+  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
 }
 .exp-preview.active .exp-preview-icon {
   color: var(--accent);
+  transform: scale(1.1);
 }
 .exp-preview .exp-preview-icon {
   font-size: 1.8rem;
@@ -605,28 +667,33 @@ ul {
   transition: 0.3s;
 }
 .exp-preview .exp-preview-title {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--text-main);
   font-weight: 500;
 }
 .exp-preview .exp-preview-year {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: var(--accent);
   font-family: var(--font-mono);
-  margin-top: 5px;
+  margin-top: 6px;
 }
 
 .exp-detail {
+  min-height: 280px;
+}
+
+.exp-detail-card {
   background: rgba(17, 34, 64, 0.8);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(100, 255, 218, 0.2);
+  border: 1px solid rgba(100, 255, 218, 0.15);
   border-radius: 16px;
   padding: 35px;
-  min-height: 280px;
   position: relative;
   overflow: hidden;
+  animation: fadeInScale 0.4s ease forwards;
+  height: 100%;
 }
-.exp-detail::before {
+.exp-detail-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -669,13 +736,13 @@ ul {
 }
 
 .exp-detail h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--text-main);
   margin-bottom: 5px;
 }
 
 .exp-detail h4 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--text-sec);
   font-weight: 400;
   margin-bottom: 20px;
@@ -684,19 +751,36 @@ ul {
 .exp-detail p {
   font-size: 1rem;
   color: #a8b2d1;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
-@media (max-width: 900px) {
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.98) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 1000px) {
   .experience-layout {
     grid-template-columns: 1fr;
   }
-  .exp-previews {
-    order: 2;
-  }
   .exp-detail {
-    order: 1;
-    min-height: auto;
+    order: -1;
+    margin-bottom: 20px;
   }
 }
 .projects-grid {
@@ -718,6 +802,12 @@ ul {
   transform: perspective(1000px);
   min-height: 250px;
   justify-content: center;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.project-card:hover {
+  background: rgba(17, 34, 64, 0.8);
+  border-color: var(--accent);
 }
 .project-card h3 {
   color: var(--text-main);
@@ -730,6 +820,30 @@ ul {
   font-size: 13px;
   line-height: 1.6;
   transform: translateZ(20px);
+  margin-bottom: 15px;
+}
+
+.project-card-link {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+.project-card-link:hover .project-link {
+  color: var(--accent);
+}
+
+.project-link {
+  color: var(--text-sec);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: var(--transition);
+  transform: translateZ(10px);
+}
+.project-link i {
+  font-size: 16px;
 }
 
 .p-icon {
@@ -1183,6 +1297,293 @@ body.light-mode #stars3 {
   }
   #themeToggle.active .indicator::before {
     content: "☀️";
+  }
+}
+#cv-export-container {
+  display: none;
+}
+
+body.is-exporting-pdf {
+  background: #ffffff !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  overflow: visible !important;
+}
+body.is-exporting-pdf .containerMain,
+body.is-exporting-pdf .menuPrincipal,
+body.is-exporting-pdf .mobileToggle,
+body.is-exporting-pdf #themeToggle,
+body.is-exporting-pdf .stars-container,
+body.is-exporting-pdf .page-loader {
+  display: none !important;
+}
+body.is-exporting-pdf #cv-export-container {
+  display: block !important;
+  background: #ffffff !important;
+  padding: 0 !important;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  margin: 0 auto !important;
+  width: 624px !important;
+  min-height: 100vh;
+  overflow: visible !important;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv {
+  background: white !important;
+  color: #000 !important;
+  font-family: "Inter", Helvetica, Arial, sans-serif !important;
+  line-height: 1.4 !important;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-header {
+  text-align: center;
+  margin-bottom: 25px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #000;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-header .harvard-name {
+  font-size: 32px !important;
+  font-weight: 800 !important;
+  margin-bottom: 8px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 3px !important;
+  color: #000 !important;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-header .harvard-contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 11px !important;
+  margin: 0 !important;
+  color: #444 !important;
+  font-weight: 600 !important;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-header .harvard-contact-info i {
+  font-size: 12px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-header .harvard-title-heading {
+  font-size: 16px !important;
+  margin-top: 12px !important;
+  font-weight: 700 !important;
+  color: #000 !important;
+  text-transform: uppercase;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-section {
+  margin-bottom: 35px !important;
+  padding-bottom: 5px !important;
+  display: block !important;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-section .harvard-section-title {
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  border-bottom: 1.5px solid #000 !important;
+  margin-bottom: 15px !important;
+  padding-bottom: 4px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-section .harvard-summary-text {
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+  margin-bottom: 0 !important;
+  text-align: justify;
+  color: #222 !important;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-company-block {
+  margin-bottom: 18px;
+  page-break-inside: auto !important;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-company-block .harvard-company-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 13px !important;
+  margin-bottom: 8px !important;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-company-block .harvard-company-header strong {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-company-block .harvard-company-header span {
+  font-weight: 700;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-project {
+  margin-bottom: 20px !important;
+  padding-bottom: 5px !important;
+  padding-left: 12px;
+  border-left: 1px solid #eee;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-project .harvard-project-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 12px !important;
+  margin-bottom: 3px !important;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-project .harvard-project-title strong {
+  color: #000;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-project .harvard-project-title em {
+  font-style: normal;
+  font-weight: 700;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-project .harvard-project-meta {
+  font-size: 11px !important;
+  font-style: italic !important;
+  color: #444 !important;
+  margin-bottom: 5px !important;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-project .harvard-project-desc {
+  font-size: 11px !important;
+  color: #222 !important;
+  line-height: 1.4 !important;
+  margin-bottom: 0 !important;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv .harvard-skills-list {
+  font-size: 11.5px !important;
+  line-height: 1.6 !important;
+  color: #111 !important;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv {
+  width: 624px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+  text-align: left !important;
+}
+body.is-exporting-pdf #cv-export-container .harvard-cv i {
+  display: none !important;
+}
+
+@media print {
+  body .containerMain,
+  body .menuPrincipal,
+  body .mobileToggle {
+    display: none !important;
+  }
+  body #cv-export-container {
+    display: block !important;
+  }
+  body #cv-export-container .harvard-cv {
+    background: white !important;
+    color: #000 !important;
+    font-family: "Inter", Helvetica, Arial, sans-serif !important;
+    line-height: 1.4 !important;
+  }
+  body #cv-export-container .harvard-cv .harvard-header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #000;
+  }
+  body #cv-export-container .harvard-cv .harvard-header .harvard-name {
+    font-size: 32px !important;
+    font-weight: 800 !important;
+    margin-bottom: 8px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 3px !important;
+    color: #000 !important;
+  }
+  body #cv-export-container .harvard-cv .harvard-header .harvard-contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 11px !important;
+    margin: 0 !important;
+    color: #444 !important;
+    font-weight: 600 !important;
+  }
+  body #cv-export-container .harvard-cv .harvard-header .harvard-contact-info i {
+    font-size: 12px;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+  body #cv-export-container .harvard-cv .harvard-header .harvard-title-heading {
+    font-size: 16px !important;
+    margin-top: 12px !important;
+    font-weight: 700 !important;
+    color: #000 !important;
+    text-transform: uppercase;
+  }
+  body #cv-export-container .harvard-cv .harvard-section {
+    margin-bottom: 35px !important;
+    padding-bottom: 5px !important;
+    display: block !important;
+  }
+  body #cv-export-container .harvard-cv .harvard-section .harvard-section-title {
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    border-bottom: 1.5px solid #000 !important;
+    margin-bottom: 15px !important;
+    padding-bottom: 4px !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+  }
+  body #cv-export-container .harvard-cv .harvard-section .harvard-summary-text {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0 !important;
+    text-align: justify;
+    color: #222 !important;
+  }
+  body #cv-export-container .harvard-cv .harvard-company-block {
+    margin-bottom: 18px;
+    page-break-inside: auto !important;
+  }
+  body #cv-export-container .harvard-cv .harvard-company-block .harvard-company-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 13px !important;
+    margin-bottom: 8px !important;
+  }
+  body #cv-export-container .harvard-cv .harvard-company-block .harvard-company-header strong {
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  body #cv-export-container .harvard-cv .harvard-company-block .harvard-company-header span {
+    font-weight: 700;
+  }
+  body #cv-export-container .harvard-cv .harvard-project {
+    margin-bottom: 20px !important;
+    padding-bottom: 5px !important;
+    padding-left: 12px;
+    border-left: 1px solid #eee;
+  }
+  body #cv-export-container .harvard-cv .harvard-project .harvard-project-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 12px !important;
+    margin-bottom: 3px !important;
+  }
+  body #cv-export-container .harvard-cv .harvard-project .harvard-project-title strong {
+    color: #000;
+  }
+  body #cv-export-container .harvard-cv .harvard-project .harvard-project-title em {
+    font-style: normal;
+    font-weight: 700;
+  }
+  body #cv-export-container .harvard-cv .harvard-project .harvard-project-meta {
+    font-size: 11px !important;
+    font-style: italic !important;
+    color: #444 !important;
+    margin-bottom: 5px !important;
+  }
+  body #cv-export-container .harvard-cv .harvard-project .harvard-project-desc {
+    font-size: 11px !important;
+    color: #222 !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0 !important;
+  }
+  body #cv-export-container .harvard-cv .harvard-skills-list {
+    font-size: 11.5px !important;
+    line-height: 1.6 !important;
+    color: #111 !important;
   }
 }
 .mobileToggle {
