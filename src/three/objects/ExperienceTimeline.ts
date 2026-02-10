@@ -3,17 +3,11 @@ import { experience } from '@/data/experience';
 
 export class ExperienceTimeline {
     public mesh: THREE.Group;
-    private materials: THREE.MeshBasicMaterial[];
     private nodes: THREE.Mesh[] = [];
     private line!: THREE.Line;
 
     constructor(scene: THREE.Scene) {
         this.mesh = new THREE.Group();
-        this.materials = [
-            new THREE.MeshBasicMaterial({ color: 0x00ff88, wireframe: true }), // Current
-            new THREE.MeshBasicMaterial({ color: 0x00ccff, wireframe: true }), // Previous
-            new THREE.MeshBasicMaterial({ color: 0xff0055, wireframe: true })  // Oldest
-        ];
 
         this.createTimeline();
         scene.add(this.mesh);

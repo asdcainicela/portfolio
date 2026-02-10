@@ -17,7 +17,7 @@ export class AssetLoader {
                 console.log('Assets loaded');
                 window.dispatchEvent(new Event('assetsLoaded'));
             },
-            (url, loaded, total) => {
+            (_url, loaded, total) => {
                 console.log(`Loading... ${(loaded / total * 100).toFixed(0)}%`);
             }
         );
