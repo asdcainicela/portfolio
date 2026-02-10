@@ -1,0 +1,106 @@
+@use '../base/variables' as *;
+
+.projects-section {
+    padding: 100px 5% 50px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 30px 25px;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+    cursor: default;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba($color-accent-primary, 0.3);
+        transform: translateY(-5px);
+
+        .p-icon i {
+            color: $color-accent-primary;
+            transform: scale(1.1);
+        }
+    }
+
+    .p-icon {
+        margin-bottom: 25px;
+
+        i {
+            font-size: 40px;
+            color: rgba($color-text, 0.5);
+            transition: all 0.3s ease;
+        }
+    }
+
+    h3 {
+        font-family: $font-family-base;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: $color-text;
+    }
+
+    .project-meta {
+        font-family: $font-family-mono;
+        font-size: 0.75rem;
+        color: $color-accent-primary;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: rgba($color-text, 0.7);
+        margin-bottom: 25px;
+        flex-grow: 1;
+    }
+
+    .technologies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        list-style: none;
+
+        li {
+            font-family: $font-family-mono;
+            font-size: 0.7rem;
+            color: rgba($color-accent-secondary, 0.8);
+        }
+    }
+
+    .project-links {
+        margin-top: 25px;
+        display: flex;
+        gap: 15px;
+
+        a {
+            color: $color-text;
+            font-size: 1.3rem;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $color-accent-primary;
+            }
+        }
+    }
+}

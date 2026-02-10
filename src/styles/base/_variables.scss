@@ -1,0 +1,24 @@
+// Colors - Industrial Command Center
+$color-bg: #0a0a0a;
+$color-text: #e0e0e0;
+$color-heading: #ffffff;
+$color-accent-primary: #00d4ff; // Tech Blue
+$color-accent-secondary: #00ff88; // Terminal Green
+$color-accent-alert: #ff4d4d;
+$color-surface: rgba(20, 20, 20, 0.8);
+
+// Fonts
+$font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+$font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+// Z-Index
+$z-background: -1;
+$z-scene: 0;
+$z-ui: 10;
+$z-fixed: 50;
+$z-modal: 100;
+$z-cursor: 999;
+
+// Breakpoints
+$bp-mobile: 768px;
+$bp-tablet: 1024px;

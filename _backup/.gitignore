@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+node
+
+# Compiled CSS (generated from SCSS) - optional, some prefer to commit it
+# styles.css
+# styles.css.map
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+*styles.css.map

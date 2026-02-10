@@ -1,0 +1,48 @@
+@use 'variables' as *;
+
+.section-title {
+    font-family: $font-family-mono;
+    font-size: clamp(26px, 5vw, 32px);
+    font-weight: 600;
+    margin: 10px 0 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+
+    // Numbering style
+    span {
+        color: $color-accent-primary;
+        margin-right: 10px;
+        font-family: $font-family-mono;
+        font-weight: 400;
+
+        @media (max-width: $bp-tablet) {
+            margin-right: 5px;
+        }
+    }
+
+    // The line after the title
+    &::after {
+        content: "";
+        display: block;
+        width: 300px;
+        height: 1px;
+        background-color: rgba($color-accent-secondary, 0.4); // Subtle line
+        margin-left: 20px;
+
+        @media (max-width: $bp-tablet) {
+            width: 100%; // Fill remaining width on mobile
+            margin-left: 10px;
+        }
+    }
+}
+
+.big-heading {
+    font-family: $font-family-base;
+    font-size: clamp(40px, 8vw, 80px);
+    font-weight: 600;
+    color: $color-heading;
+    line-height: 1.1;
+    margin: 0;
+}

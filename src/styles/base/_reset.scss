@@ -1,0 +1,72 @@
+@use 'variables' as *;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    /* overflow: hidden; Removed to let Lenis handle it correctly on the root */
+    background-color: $color-bg;
+    color: $color-text;
+    font-family: $font-family-base;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Lenis recommended styles */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+canvas#webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: $z-scene;
+    pointer-events: auto; // Allow raycasting
+}
+
+#app {
+    position: relative;
+    width: 100%;
+    z-index: $z-ui;
+    pointer-events: none; // Let events pass to canvas by default
+
+    // Re-enable pointer events for interactive UI elements
+    a,
+    button,
+    input,
+    textarea,
+    .card,
+    .project-card,
+    .exp-preview,
+    .exp-company-header,
+    .pointer-events-auto {
+        pointer-events: auto;
+    }
+}
