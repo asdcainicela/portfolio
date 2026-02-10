@@ -44,7 +44,7 @@ export class Scene {
 
         // Init Objects
         this.kleinBottle = new KleinBottle(this.scene);
-        // this.capybara = new Capybara(this.scene); // Deactivated
+        this.capybara = new Capybara(this.scene);
         // this.statsBoxes = new StatsBoxes(this.scene); // Deactivated
         this.skillOrbs = new SkillOrbs(this.scene);
         this.experienceTimeline = new ExperienceTimeline(this.scene);
@@ -62,7 +62,7 @@ export class Scene {
 
         this.materials.update(delta);
         // this.particles.update(elapsedTime);
-        // this.capybara.update(elapsedTime, this.mouseParallax.position); // Deactivated
+        this.capybara.update(elapsedTime, this.mouseParallax.position);
         this.kleinBottle.update(elapsedTime, this.mouseParallax.position);
         // this.statsBoxes.update(elapsedTime); // Deactivated
         this.skillOrbs.update(elapsedTime);
@@ -77,7 +77,7 @@ export class Scene {
         if (scrollProg < 0.2) {
             // Hero
             this.kleinBottle.setSection('hero');
-            // this.capybara.mesh.visible = true; // Deactivated
+            this.capybara.mesh.visible = true;
             // this.statsBoxes.animateOut();
             this.skillOrbs.setVisible(false);
             this.experienceTimeline.setVisible(false);
@@ -85,7 +85,7 @@ export class Scene {
         } else if (scrollProg < 0.4) {
             // Profile
             this.kleinBottle.setSection('profile');
-            // this.capybara.mesh.visible = false;
+            this.capybara.mesh.visible = false;
             // this.statsBoxes.animateIn();
             this.skillOrbs.setVisible(true);
             this.experienceTimeline.setVisible(false);
@@ -93,7 +93,7 @@ export class Scene {
         } else if (scrollProg < 0.6) {
             // Experience
             this.kleinBottle.setSection('experience');
-            // this.capybara.mesh.visible = false;
+            this.capybara.mesh.visible = false;
             // this.statsBoxes.animateOut();
             this.skillOrbs.setVisible(false);
             this.experienceTimeline.setVisible(true);
@@ -103,14 +103,14 @@ export class Scene {
         } else if (scrollProg < 0.8) {
             // Projects
             this.kleinBottle.setSection('projects');
-            // this.capybara.mesh.visible = false;
+            this.capybara.mesh.visible = false;
             this.skillOrbs.setVisible(false);
             this.experienceTimeline.setVisible(false); // Hide timeline
             targetCamPos.set(0, -20, 15);
         } else {
             // Contact
             this.kleinBottle.setSection('contact');
-            // this.capybara.mesh.visible = false;
+            this.capybara.mesh.visible = false;
             this.skillOrbs.setVisible(false);
             this.experienceTimeline.setVisible(false);
             targetCamPos.set(0, -30, 10);

@@ -6,6 +6,8 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>portfolio</title>
+  <!-- html2canvas and jspdf (Dependencies for html2pdf) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body>
@@ -26,6 +28,7 @@
         <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="javascript:void(0)" id="download-cv" class="nav-link cv-btn">Download CV</a></li>
       </ul>
       <div class="menu-toggle">☰</div>
     </nav>
@@ -141,6 +144,9 @@
       <!-- Contact Content will go here -->
     </section>
   </div>
+
+  <!-- Hidden CV Export Template -->
+  <div id="cv-export-container" style="display: none;"></div>
 
   <script type="module" src="/src/main.ts"></script>
 </body>
