@@ -6,7 +6,7 @@ import { AssetLoader } from '@/utils/AssetLoader';
 import { Materials } from '../materials/Materials';
 // import { ParticleSystem } from '../objects/ParticleSystem';
 import { MouseParallax } from '@/utils/MouseParallax';
-import { Capybara } from '../objects/Capybara';
+import { GeometricShape } from '../objects/GeometricShape';
 import { KleinBottle } from '../objects/KleinBottle';
 import { StatsBoxes } from '../objects/StatsBoxes';
 import { SkillOrbs } from '../objects/SkillOrbs';
@@ -23,7 +23,7 @@ export class Scene {
     public mouseParallax: MouseParallax;
 
     // Objects
-    public capybara!: Capybara;
+    public geometricShape!: GeometricShape;
     public kleinBottle!: KleinBottle;
     public statsBoxes!: StatsBoxes;
     public skillOrbs!: SkillOrbs;
@@ -44,7 +44,7 @@ export class Scene {
 
         // Init Objects
         this.kleinBottle = new KleinBottle(this.scene);
-        this.capybara = new Capybara(this.scene);
+        this.geometricShape = new GeometricShape(this.scene);
         // this.statsBoxes = new StatsBoxes(this.scene); // Deactivated
         this.skillOrbs = new SkillOrbs(this.scene);
         this.experienceTimeline = new ExperienceTimeline(this.scene);
@@ -62,7 +62,7 @@ export class Scene {
 
         this.materials.update(delta);
         // this.particles.update(elapsedTime);
-        this.capybara.update(elapsedTime, this.mouseParallax.position);
+        this.geometricShape.update(elapsedTime, this.mouseParallax.position);
         this.kleinBottle.update(elapsedTime, this.mouseParallax.position);
         // this.statsBoxes.update(elapsedTime); // Deactivated
         this.skillOrbs.update(elapsedTime);
@@ -77,7 +77,8 @@ export class Scene {
         if (scrollProg < 0.2) {
             // Hero
             this.kleinBottle.setSection('hero');
-            this.capybara.mesh.visible = true;
+            this.kleinBottle.setY(0);
+            this.geometricShape.mesh.visible = true;
             // this.statsBoxes.animateOut();
             this.skillOrbs.setVisible(false);
             this.experienceTimeline.setVisible(false);
@@ -85,7 +86,8 @@ export class Scene {
         } else if (scrollProg < 0.4) {
             // Profile
             this.kleinBottle.setSection('profile');
-            this.capybara.mesh.visible = false;
+            this.kleinBottle.setY(0);
+            this.geometricShape.mesh.visible = false;
             // this.statsBoxes.animateIn();
             this.skillOrbs.setVisible(true);
             this.experienceTimeline.setVisible(false);
@@ -93,7 +95,8 @@ export class Scene {
         } else if (scrollProg < 0.6) {
             // Experience
             this.kleinBottle.setSection('experience');
-            this.capybara.mesh.visible = false;
+            this.kleinBottle.setY(0);
+            this.geometricShape.mesh.visible = false;
             // this.statsBoxes.animateOut();
             this.skillOrbs.setVisible(false);
             this.experienceTimeline.setVisible(true);
@@ -103,14 +106,17 @@ export class Scene {
         } else if (scrollProg < 0.8) {
             // Projects
             this.kleinBottle.setSection('projects');
-            this.capybara.mesh.visible = false;
+            this.kleinBottle.setY(-20); // Follow camera
+            this.geometricShape.mesh.visible = true; // Re-enable for Projects
+            this.geometricShape.mesh.position.set(-6, -20, 5); // Closer to camera (10 units away), moved left
             this.skillOrbs.setVisible(false);
             this.experienceTimeline.setVisible(false); // Hide timeline
             targetCamPos.set(0, -20, 15);
         } else {
             // Contact
             this.kleinBottle.setSection('contact');
-            this.capybara.mesh.visible = false;
+            this.kleinBottle.setY(-30); // Follow camera
+            this.geometricShape.mesh.visible = false;
             this.skillOrbs.setVisible(false);
             this.experienceTimeline.setVisible(false);
             targetCamPos.set(0, -30, 10);

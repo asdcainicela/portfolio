@@ -21,6 +21,7 @@ export class KleinBottle {
     private currentSection: string = 'hero';
     private currentScale: number = 3;
     private targetScale: number = 3;
+    private centerY: number = 0; // Base Y position
 
     // Mouse Interaction
     private mouseRotation = new THREE.Vector2(0, 0);
@@ -120,11 +121,17 @@ export class KleinBottle {
         target.set(x, y, z);
     }
 
+    public setY(y: number) {
+        this.centerY = y;
+    }
+
     public update(time: number, mouseTarget?: THREE.Vector2) {
         // Continuous idle rotation
         this.mesh.rotation.y += 0.001;
         this.mesh.rotation.x += 0.0005;
-        this.mesh.position.y = Math.sin(time * 0.5) * 0.2;
+
+        // Base position + float
+        this.mesh.position.y = this.centerY + Math.sin(time * 0.5) * 0.2;
 
         // Mouse follow logic (Inertia)
         if (mouseTarget) {

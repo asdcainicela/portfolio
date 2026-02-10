@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>portfolio</title>
+  <title>Gerald Cainicela | Edge AI & Industrial IoT</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <!-- html2canvas and jspdf (Dependencies for html2pdf) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
@@ -36,15 +37,29 @@
     <section id="hero" class="hero-overlay">
       <div class="hero-content">
         <p class="greeting">Hi, I'm</p>
-        <h1 class="name">Gerald <span>Cainicela</span>.</h1>
-        <h2 class="title">&lt;Edge AI & Industrial IoT /&gt;</h2>
+
+        <!-- Parallax Name -->
+        <div class="parallax-name">
+          <div id="nameScene" data-relative-input="true">
+            <div id="parallaxText" data-depth="0.3">
+              <span>G</span><span>e</span><span>r</span><span>a</span><span>l</span><span>d</span><span>&nbsp;</span><span>C</span><span>a</span><span>i</span><span>n</span><span>i</span><span>c</span><span>e</span><span>l</span><span>a</span><span>.</span>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="big-heading text-gradient">Edge AI & Industrial IoT.</h2>
         <p class="hero-desc">
-          <strong>Mechatronics Engineer & Applied Mathematician</strong>.<br>
+          <b>Mechatronics Engineer & Applied Mathematician</b>. <br>
           Architecting high-performance systems for real-time mining and industrial surveillance.
         </p>
-        <div class="cta-container">
-          <a href="#projects" class="btn">View Work</a>
-          <a href="#contact" class="btn secondary">Contact Me</a>
+        <div class="hero-cta">
+          <a href="#projects" class="btn primary">View Work</a>
+          <a href="javascript:void(0)" id="download-cv" class="btn secondary">
+            <i class='bx bx-download'></i> CV
+          </a>
+          <a href="https://github.com/asdcainicela" target="_blank" class="btn secondary">
+            <i class='bx bxl-github'></i>
+          </a>
         </div>
       </div>
 
@@ -57,97 +72,197 @@
     <!-- Profile Section -->
     <section id="profile" class="profile-section">
       <div class="profile-container">
-        <div class="bio-card">
-          <h3>Profile</h3>
-          <p>
-            <strong>B.Sc. Mechatronics Engineering</strong> (UNI) & <strong>Master's in Applied Mathematics</strong>
-            (IMCA).
-          </p>
-          <p>
-            Specialized in architecting high-performance <strong>Edge AI</strong> systems that bring industrial
-            stability
-            to modern algorithms. From developing zero-latency communication protocols for heavy mining surveillance to
-            implementing global IoT telemetry networks for cold chain logistics.
-          </p>
+        <h2 class="section-title"><span>02.</span> Profile</h2>
 
-          <ul class="details">
-            <li><span>Location:</span> Lima, Peru 🇵🇪</li>
-            <li><span>Education:</span> UNI + IMCA (2019-Present)</li>
-            <li><span>Core:</span> Python / C++ / CUDA / Rust</li>
-          </ul>
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <i class='bx bx-git-repo-forked'></i>
+            <span class="stat-number counter" data-target="47">47</span>
+            <span class="stat-label">Repositories</span>
+          </div>
+          <div class="stat-card">
+            <i class='bx bx-code-alt'></i>
+            <span class="stat-number counter" data-target="3807">3807</span>
+            <span class="stat-label">Contributions</span>
+          </div>
+          <div class="stat-card">
+            <i class='bx bx-briefcase'></i>
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Years Exp</span>
+          </div>
+          <div class="stat-card">
+            <i class='bx bx-certification'></i>
+            <span class="stat-number counter" data-target="19">19</span>
+            <span class="stat-label">Certificates</span>
+          </div>
         </div>
 
-        <!-- Tech Stack Legend -->
-        <div class="skills-legend">
-          <span class="skill-tag ai">Computer Vision (YOLO/TensorRT)</span>
-          <span class="skill-tag iot">Industrial IoT (LoRaWAN/MQTT)</span>
-          <span class="skill-tag hw">Edge (Jetson/ESP32)</span>
-          <span class="skill-tag lang">PLC (Codesys/Modbus)</span>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              <b>B.Sc. in Mechatronics Engineering</b> (UNI) & <b>Master's in Applied Mathematics</b>
+              (IMCA).
+            </p>
+            <p>
+              Specialized in architecting high-performance Edge AI systems that bring industrial stability
+              to modern algorithms. From developing zero-latency communication protocols for heavy mining
+              surveillance to implementing global IoT telemetry networks for cold chain logistics, I focus
+              on building reliable, real-time intelligence for complex environments.
+            </p>
+
+            <div class="highlight-box glass-card" data-tilt>
+              <div class="h-item"><i class='bx bx-map'></i> Lima, Perú 🇵🇪</div>
+              <div class="h-item">
+                <i class='bx bxs-graduation'></i>
+                <span>UNI + IMCA <br>
+                  <small
+                    style="font-size: 11px; opacity: 0.7; font-family: var(--font-main); line-height: 1.2; display: block; margin-top: 2px;">
+                    Universidad Nacional de Ingeniería + Instituto de Matemática y Ciencias Afines
+                  </small>
+                </span>
+              </div>
+              <div class="h-item"><i class='bx bx-code-alt'></i> Python / C++ / CUDA</div>
+            </div>
+          </div>
+
+          <!-- Skills as Badges -->
+          <div class="skills-visual">
+            <div class="skill-badge" data-tilt><i class='bx bxl-python'></i> <span>Python</span></div>
+            <div class="skill-badge" data-tilt><i class='bx bxl-c-plus-plus'></i> <span>C++20</span></div>
+            <div class="skill-badge" data-tilt><i class='bx bxl-rust'></i> <span>Rust</span></div>
+            <div class="skill-badge" data-tilt><i class='bx bxs-microchip'></i> <span>CUDA</span></div>
+            <div class="skill-badge" data-tilt><i class='bx bx-cube'></i> <span>TensorRT</span></div>
+            <div class="skill-badge" data-tilt><i class='bx bx-wifi'></i> <span>IoT</span></div>
+            <div class="skill-badge" data-tilt><i class='bx bxs-factory'></i> <span>PLC</span></div>
+          </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="tech-stack">
+          <div class="tech-category">
+            <h4><i class='bx bx-brain'></i> Computer Vision & AI</h4>
+            <div class="tech-badges">
+              <span class="tech-badge">CUDA</span>
+              <span class="tech-badge">cuDNN</span>
+              <span class="tech-badge">TensorRT</span>
+              <span class="tech-badge">ONNX</span>
+              <span class="tech-badge">OpenCV</span>
+              <span class="tech-badge">YOLO</span>
+              <span class="tech-badge">PyTorch</span>
+              <span class="tech-badge">libtorch</span>
+            </div>
+          </div>
+          <div class="tech-category">
+            <h4><i class='bx bx-station'></i> Industrial IoT & Cloud</h4>
+            <div class="tech-badges">
+              <span class="tech-badge">LoRaWAN</span>
+              <span class="tech-badge">MQTT (EMQX)</span>
+              <span class="tech-badge">Azure IoT Hub</span>
+              <span class="tech-badge">Modbus RS485</span>
+              <span class="tech-badge">Shared Memory</span>
+              <span class="tech-badge">Double Buffering</span>
+              <span class="tech-badge">Docker</span>
+              <span class="tech-badge">FRP</span>
+            </div>
+          </div>
+          <div class="tech-category">
+            <h4><i class='bx bxs-chip'></i> Hardware & Edge</h4>
+            <div class="tech-badges">
+              <span class="tech-badge">Jetson Orin/Nano</span>
+              <span class="tech-badge">ESP32 (RAK3172)</span>
+              <span class="tech-badge">FreeRTOS</span>
+              <span class="tech-badge">Node-RED</span>
+              <span class="tech-badge">ARM Cortex</span>
+              <span class="tech-badge">STM32</span>
+            </div>
+          </div>
+          <div class="tech-category">
+            <h4><i class='bx bxs-factory'></i> Industrial & PLC</h4>
+            <div class="tech-badges">
+              <span class="tech-badge">CODESYS</span>
+              <span class="tech-badge">IEC 61131-3</span>
+              <span class="tech-badge">CAN/J1939</span>
+              <span class="tech-badge">Modbus</span>
+              <span class="tech-badge">RS485</span>
+              <span class="tech-badge">MQTT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="education-grid">
+          <div class="edu-card">
+            <div class="edu-icon"><i class='bx bxs-graduation'></i></div>
+            <h3>Master's in Applied Mathematics</h3>
+            <h4>IMCA - Instituto de Matemática</h4>
+            <span class="edu-date">2025 - Present</span>
+          </div>
+          <div class="edu-card">
+            <div class="edu-icon"><i class='bx bx-cog'></i></div>
+            <h3>B.Sc. Mechatronics Engineering</h3>
+            <h4>Universidad Nacional de Ingeniería</h4>
+            <span class="edu-date">2019 - 2023</span>
+          </div>
         </div>
       </div>
     </section>
+
     <!-- Experience Section -->
-    <section id="experience" class="section">
+    <section id="experience" class="experience-section">
       <div class="experience-container">
-        <h2 class="section-title">Experience</h2>
-
-        <div class="timeline">
-          <!-- Item 1: Smartech Latam -->
-          <div class="timeline-item left">
-            <div class="content glass-card">
-              <h3>Edge AI & IoT Engineer</h3>
-              <h4>Smartech Latam SAC</h4>
-              <span class="date">2025 - Present</span>
-              <p>Architecting high-performance mining surveillance (30 FPS) and industrial telemetry networks.</p>
-              <ul class="tags">
-                <li>Ruma Analytics</li>
-                <li>SmartTank</li>
-                <li>Face Rec</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Item 2: Alys Peru -->
-          <div class="timeline-item right">
-            <div class="content glass-card">
-              <h3>Computer Vision Engineer</h3>
-              <h4>Alys Peru SA</h4>
-              <span class="date">2025 - Present</span>
-              <p>Developing high-speed visual classification engines and textile telemetry systems.</p>
-              <ul class="tags">
-                <li>Visual Coin</li>
-                <li>Shrimp Monitor</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Item 3: Mining Mechatronick -->
-          <div class="timeline-item left">
-            <div class="content glass-card">
-              <h3>Mechatronics Engineer</h3>
-              <h4>Mining Mechatronick</h4>
-              <span class="date">2023 - 2024</span>
-              <p>Automated safety systems for underground mining and heavy machinery simulation.</p>
-              <ul class="tags">
-                <li>Safety System</li>
-                <li>Wireless Sim</li>
-              </ul>
-            </div>
-          </div>
+        <h2 class="section-title"><span>03.</span> Experience</h2>
+        <div id="experienceContainer">
+          <!-- JS will inject company rows here -->
         </div>
       </div>
     </section>
-    <section id="projects" style="height: 100vh; position: relative;">
-      <!-- Projects Content will go here -->
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+      <div class="projects-container">
+        <h2 class="section-title"><span>04.</span> Projects</h2>
+        <div id="projectsGrid" class="projects-grid">
+          <!-- JS will inject project cards here -->
+        </div>
+      </div>
     </section>
-    <section id="contact" style="height: 100vh; position: relative;">
-      <!-- Contact Content will go here -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="contact-container">
+        <h2 class="section-title"><span>05.</span> Contact</h2>
+        <h1 class="big-heading">Let's Create.</h1>
+
+        <div class="social-counters">
+          <a href="https://github.com/asdcainicela" target="_blank" class="counter-item">
+            <i class='bx bxl-github'></i>
+            <span class="counter">50</span>
+            <span class="counter-text">Repos</span>
+          </a>
+          <a href="https://www.linkedin.com/in/gerald-cainicela/" target="_blank" class="counter-item">
+            <i class='bx bxl-linkedin'></i>
+            <span class="counter">500</span>
+            <span class="counter-text">Connections</span>
+          </a>
+          <a href="https://www.tiktok.com/@lnx_science" target="_blank" class="counter-item">
+            <i class='bx bxl-tiktok'></i>
+            <span class="counter">5000</span>
+            <span class="counter-text">Followers</span>
+          </a>
+        </div>
+
+        <a href="mailto:gerald.cainicela.a@gmail.com" class="big-btn">
+          <i class='bx bx-envelope'></i> Say Hello
+        </a>
+      </div>
     </section>
   </div>
 
   <!-- Hidden CV Export Template -->
   <div id="cv-export-container" style="display: none;"></div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
   <script type="module" src="/src/main.ts"></script>
 </body>
 

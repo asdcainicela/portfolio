@@ -121,7 +121,7 @@
     }
 }
 
-// Keyframes (if not imported globally)
+// Keyframes
 @keyframes slideUp {
     from {
         opacity: 0;
@@ -131,5 +131,112 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+// --- Parallax & Gradient Styles Ported from Backup ---
+
+.text-gradient {
+    background: linear-gradient(90deg, $color-text 0%, $color-accent-primary 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.parallax-name {
+    position: relative;
+    display: flex;
+    justify-content: center; // Centered
+    // justify-content: flex-start; // Or left aligned if preferred? Backup was centered in hero-main but let's stick to flex logic
+    align-items: center;
+    margin-bottom: 1rem;
+    perspective: 100px;
+    opacity: 0;
+    animation: slideUp 0.8s ease forwards 0.7s;
+
+    #nameScene {
+        display: flex !important;
+        position: relative;
+
+        #parallaxText {
+            display: flex !important;
+            position: relative;
+            z-index: 10;
+
+            span {
+                position: relative !important;
+                display: inline-block;
+                font-family: $font-family-base;
+                font-size: 5rem;
+                font-weight: 800;
+                color: $color-text;
+                text-transform: none;
+                letter-spacing: 0.02em;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 4px 4px 8px rgba(0, 0, 0, 0.2);
+                transition: 0.3s;
+                cursor: default;
+
+                &:hover {
+                    color: $color-accent-primary;
+                    text-shadow: 0 0 10px $color-accent-primary, 0 0 20px $color-accent-primary;
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    }
+}
+
+// Overrides for restored HTML structure
+.hero-content {
+    .big-heading {
+        font-family: $font-family-base;
+        font-size: 3rem;
+        font-weight: 800;
+        color: $color-text;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+        opacity: 0;
+        animation: slideUp 0.8s ease forwards 0.9s;
+    }
+
+    .hero-cta {
+        margin-top: 2rem;
+        display: flex;
+        gap: 1.5rem;
+        opacity: 0;
+        animation: slideUp 0.8s ease forwards 1.1s;
+
+        .btn {
+            // Re-using existing btn styles but ensuring they apply
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            font-family: $font-family-mono;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+
+            &.primary {
+                border: 1px solid $color-accent-primary;
+                color: $color-accent-primary;
+                background: rgba($color-accent-primary, 0.05);
+
+                &:hover {
+                    background: rgba($color-accent-primary, 0.2);
+                    box-shadow: 0 0 15px rgba($color-accent-primary, 0.2);
+                }
+            }
+
+            &.secondary {
+                border: 1px solid rgba($color-text, 0.3);
+                color: $color-text;
+                background: transparent;
+
+                &:hover {
+                    border-color: $color-accent-primary;
+                    color: $color-accent-primary;
+                }
+            }
+        }
     }
 }

@@ -1,155 +1,238 @@
 @use '../base/variables' as *;
-@use '../utils/mixins' as *;
 
-#experience {
-    position: relative;
+.experience-section {
+    padding: 100px 5% 50px;
     min-height: 100vh;
-    color: $color-text;
-    padding-top: 10vh;
-    background: radial-gradient(circle at 50% 50%, rgba($color-bg, 0.5) 0%, $color-bg 100%);
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    &::after {
-        content: '';
-        position: absolute;
-        top: -100%;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom,
-                transparent,
-                rgba($color-accent-primary, 0.03) 50%,
-                transparent);
-        animation: scanline 8s linear infinite;
-        pointer-events: none;
-        z-index: 1;
-    }
-}
-
-@keyframes scanline {
-    0% {
-        transform: translateY(0);
-    }
-
-    100% {
-        transform: translateY(200%);
-    }
+    // Overlay to dim 3D background
+    background: rgba(10, 10, 10, 0.5); // reduced by 0.8 factor
+    backdrop-filter: blur(6px); // reduced by 0.8 factor
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 20px; // Optional softness
+    margin: 50px 0; // Separation
 }
 
 .experience-container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 2rem;
-    position: relative;
-    z-index: 2; // Above 3D scene elements? No, let 3D be visible.
-    // Actually, we want the text to be clickable but the 3D to be behind/interactable.
-    pointer-events: none; // Let events pass to 3D if needed, but card content needs pointer-events: auto.
+    margin-top: 40px;
+}
 
-    .section-title {
-        text-align: center;
-        margin-bottom: 4rem;
-        font-family: $font-family-mono;
-        font-size: 2.5rem;
-        color: $color-accent-primary;
-        text-shadow: 0 0 10px rgba($color-accent-primary, 0.4);
-        pointer-events: auto;
+#experienceContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.exp-company-section {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.exp-company-header {
+    color: $color-accent-primary;
+    font-size: 1.1rem;
+    font-family: $font-family-mono;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba($color-accent-primary, 0.1);
+    padding-bottom: 10px;
+    cursor: default;
+
+    small {
+        color: rgba($color-text, 0.7);
+        font-family: $font-family-base;
+        font-size: 0.9rem;
+    }
+
+    &[data-url] {
+        cursor: pointer;
+
+        &:hover {
+            color: $color-text;
+            border-bottom-color: $color-accent-primary;
+        }
     }
 }
 
-.timeline {
+.experience-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 30px;
+    align-items: start;
+
+    @media (max-width: $bp-tablet) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.exp-projects-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    @media (max-width: $bp-mobile) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.exp-preview {
+    background: rgba(17, 34, 64, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 22px 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    &:hover {
+        border-color: rgba($color-accent-primary, 0.3);
+        transform: translateY(-5px);
+        background: rgba(17, 34, 64, 0.6);
+    }
+
+    &.active {
+        border-color: $color-accent-primary;
+        background: rgba($color-accent-primary, 0.05);
+        box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+
+        .exp-preview-icon {
+            color: $color-accent-primary;
+            transform: scale(1.1);
+        }
+    }
+
+    .exp-preview-icon {
+        font-size: 1.8rem;
+        color: rgba($color-text, 0.7);
+        margin-bottom: 10px;
+        transition: 0.3s;
+    }
+
+    .exp-preview-title {
+        font-size: 0.9rem;
+        color: $color-text;
+        font-weight: 500;
+    }
+
+    .exp-preview-year {
+        font-size: 0.75rem;
+        color: $color-accent-primary;
+        font-family: $font-family-mono;
+        margin-top: 6px;
+    }
+}
+
+.exp-detail {
+    min-height: 280px;
+
+    @media (max-width: $bp-tablet) {
+        order: -1;
+        margin-bottom: 20px;
+    }
+}
+
+.exp-detail-card {
+    background: rgba(17, 34, 64, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($color-accent-primary, 0.15);
+    border-radius: 16px;
+    padding: 35px;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    padding-bottom: 4rem;
+    overflow: hidden;
+    animation: fadeInScale 0.4s ease forwards;
+    height: 100%;
 
-    .timeline-item {
-        display: flex;
-        justify-content: center;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        position: relative;
-        pointer-events: auto;
+        height: 4px;
+        background: linear-gradient(90deg, $color-accent-primary, transparent);
+    }
+}
 
-        &.left {
-            justify-content: flex-start;
-            padding-right: 50%; // Leave space for 3D timeline in center
+.exp-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
 
-            .content {
-                margin-right: 2rem;
-                transform-origin: right center;
-            }
-        }
+.exp-detail-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba($color-accent-primary, 0.1);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        &.right {
-            justify-content: flex-end;
-            padding-left: 50%; // Leave space for 3D timeline in center
+    i {
+        font-size: 2rem;
+        color: $color-accent-primary;
+    }
+}
 
-            .content {
-                margin-left: 2rem;
-                transform-origin: left center;
-            }
-        }
+.exp-detail-date {
+    font-family: $font-family-mono;
+    font-size: 0.85rem;
+    color: $color-accent-primary;
+    background: rgba($color-accent-primary, 0.1);
+    padding: 5px 12px;
+    border-radius: 15px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
 
-        .content {
-            background: rgba(15, 15, 15, 0.8);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba($color-accent-primary, 0.15);
-            padding: 2rem;
-            border-radius: 12px;
-            width: 100%;
-            max-width: 450px;
-            position: relative;
-            z-index: 5;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.exp-detail {
+    h3 {
+        font-size: 1.4rem;
+        color: $color-text;
+        margin-bottom: 5px;
+    }
 
-            &:hover {
-                transform: scale(1.02);
-                border-color: $color-accent-primary;
-                box-shadow: 0 0 20px rgba($color-accent-primary, 0.2);
-            }
+    h4 {
+        font-size: 0.95rem;
+        color: rgba($color-text, 0.7);
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
 
-            h3 {
-                color: $color-text;
-                margin-bottom: 0.5rem;
-                font-size: 1.4rem;
-            }
+    p {
+        font-size: 1rem;
+        color: rgba($color-text, 0.8);
+        line-height: 1.7;
+    }
+}
 
-            h4 {
-                color: $color-accent-secondary;
-                margin-bottom: 0.5rem;
-                font-family: $font-family-mono;
-                font-size: 1rem;
-            }
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.98) translateY(10px);
+    }
 
-            .date {
-                display: block;
-                font-size: 0.9rem;
-                color: rgba($color-text, 0.6);
-                margin-bottom: 1rem;
-                font-style: italic;
-            }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
 
-            p {
-                margin-bottom: 1.5rem;
-                line-height: 1.6;
-                color: rgba($color-text, 0.9);
-            }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 
-            .tags {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                list-style: none;
-
-                li {
-                    background: rgba($color-accent-secondary, 0.1);
-                    color: $color-accent-secondary;
-                    padding: 0.3rem 0.8rem;
-                    border-radius: 50px;
-                    font-size: 0.8rem;
-                    border: 1px solid rgba($color-accent-secondary, 0.3);
-                }
-            }
-        }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

@@ -10,6 +10,7 @@ export interface Project {
     githubUrl?: string; // null if private
     featured: boolean;
     category: 'industrial' | 'iot' | 'cv' | 'education' | 'automation';
+    icon: string;
 }
 
 export const projects: Project[] = [
@@ -23,8 +24,9 @@ export const projects: Project[] = [
         description: 'A flagship Industrial AI project designed for high-availability mining operations. I architected a high-performance system capable of processing industrial stockpiles at 30 FPS with high data stability. The solution integrates advanced computer vision algorithms protected by an intelligent guard system to ensure precise volumetric measurement and structural data integrity under harsh environmental conditions.',
         technologies: ['CUDA', 'TensorRT', 'C++', 'YOLO', 'Computer Vision'],
         images: ['assets/images/projects/ruma-analytics.jpg'],
-        featured: true,
-        category: 'industrial'
+        featured: false,
+        category: 'industrial',
+        icon: 'bx-layer'
     },
     {
         id: 'smarttank-system',
@@ -36,7 +38,8 @@ export const projects: Project[] = [
         technologies: ['IoT', 'MQTT', 'ESP32', 'Sensors'],
         images: ['assets/images/projects/smarttank.jpg'],
         featured: false,
-        category: 'iot'
+        category: 'iot',
+        icon: 'bx-cylinder'
     },
     {
         id: 'face-recognition',
@@ -47,7 +50,8 @@ export const projects: Project[] = [
         technologies: ['Python', 'FaceNet', 'OpenCV', 'Biometrics'],
         images: ['assets/images/projects/face-rec.jpg'],
         featured: false,
-        category: 'cv'
+        category: 'cv',
+        icon: 'bx-user-voice'
     },
     {
         id: 'people-counting',
@@ -59,7 +63,8 @@ export const projects: Project[] = [
         technologies: ['YOLO', 'DeepSort', 'Edge AI'],
         images: ['assets/images/projects/people-count.jpg'],
         featured: false,
-        category: 'cv'
+        category: 'cv',
+        icon: 'bx-group'
     },
     {
         id: 'retail-analytics',
@@ -71,7 +76,8 @@ export const projects: Project[] = [
         technologies: ['Python', 'Data Analysis', 'Computer Vision'],
         images: ['assets/images/projects/retail.jpg'],
         featured: false,
-        category: 'cv'
+        category: 'cv',
+        icon: 'bx-shopping-bag'
     },
     {
         id: 'iot-broker',
@@ -82,7 +88,8 @@ export const projects: Project[] = [
         technologies: ['Node-RED', 'MQTT', 'Docker', 'Backend'],
         images: ['assets/images/projects/broker.jpg'],
         featured: false,
-        category: 'iot'
+        category: 'iot',
+        icon: 'bx-broadcast'
     },
 
     // Alys Peru
@@ -95,8 +102,9 @@ export const projects: Project[] = [
         description: 'An advanced visual classification system for high-speed industrial lines. I developed a multi-language processing engine optimized for high-performance edge platforms, utilizing neural networks for real-time object detection and quality control. This architecture delivers sub-millisecond precision in identifying and counting mineral components on conveyor belts in mission-critical mining environments.',
         technologies: ['C++', 'Edge AI', 'Computer Vision', 'Deep Learning'],
         images: ['assets/images/projects/visual-coin.jpg'],
-        featured: true,
-        category: 'automation'
+        featured: false,
+        category: 'automation',
+        icon: 'bx-cube'
     },
     {
         id: 'textile-telemetry',
@@ -108,7 +116,8 @@ export const projects: Project[] = [
         technologies: ['IoT', 'Modbus', 'Python', 'Wireless'],
         images: ['assets/images/projects/textile.jpg'],
         featured: false,
-        category: 'iot'
+        category: 'iot',
+        icon: 'bx-broadcast'
     },
     {
         id: 'shrimp-monitoring',
@@ -120,7 +129,8 @@ export const projects: Project[] = [
         technologies: ['IoT', 'LoRaWAN', 'Sensors', 'Industrial'],
         images: ['assets/images/projects/shrimp.jpg'],
         featured: false,
-        category: 'iot'
+        category: 'iot',
+        icon: 'bx-water'
     },
 
     // Mining Mechatronick
@@ -133,8 +143,9 @@ export const projects: Project[] = [
         description: 'A sophisticated automated safety solution for underground mining activities. I implemented a proximity-based prevention system using high-precision industrial sensors and robust PLC control logic. The system monitors operational perimeters in real-time and executes automated safety overrides to prevent mechanical hazards, ensuring human protection in mechanized drilling environments.',
         technologies: ['PLC', 'Industrial Sensors', 'Automation', 'Safety'],
         images: ['assets/images/projects/safety-system.jpg'],
-        featured: true,
-        category: 'industrial'
+        featured: false,
+        category: 'industrial',
+        icon: 'bx-shield-quarter'
     },
     {
         id: 'wireless-simulator',
@@ -146,7 +157,8 @@ export const projects: Project[] = [
         technologies: ['Unity', 'C#', 'Wireless', 'Simulation'],
         images: ['assets/images/projects/simulator.jpg'],
         featured: false,
-        category: 'education'
+        category: 'education',
+        icon: 'bx-joystick'
     },
     {
         id: 'angle-system',
@@ -158,7 +170,8 @@ export const projects: Project[] = [
         technologies: ['Embedded C', 'IMU', 'Kinematics', 'Math'],
         images: ['assets/images/projects/angle.jpg'],
         featured: false,
-        category: 'automation'
+        category: 'automation',
+        icon: 'bx-ruler'
     },
     {
         id: 'raptor-sim',
@@ -170,7 +183,8 @@ export const projects: Project[] = [
         technologies: ['Simulation', 'Hydraulics', 'Hardware', 'Control'],
         images: ['assets/images/projects/raptor.jpg'],
         featured: false,
-        category: 'education'
+        category: 'education',
+        icon: 'bx-cog'
     },
 
     // Personal / Featured
@@ -184,7 +198,8 @@ export const projects: Project[] = [
         images: ['assets/images/projects/qtfaceauth.jpg'],
         githubUrl: 'https://github.com/asdcainicela/QtFaceAuth',
         featured: true,
-        category: 'cv'
+        category: 'cv',
+        icon: 'bx-user-check'
     },
     {
         id: 'lnx-science',
@@ -196,7 +211,8 @@ export const projects: Project[] = [
         images: ['assets/images/projects/lnx-science.jpg'],
         githubUrl: undefined,
         featured: true,
-        category: 'education'
+        category: 'education',
+        icon: 'bxl-youtube'
     },
     {
         id: 'zero-copy-ipc',
@@ -207,7 +223,8 @@ export const projects: Project[] = [
         technologies: ['C++', 'CUDA', 'Shared Memory', 'High Performance'],
         images: ['assets/images/projects/ipc.jpg'],
         featured: true,
-        category: 'cv'
+        category: 'cv',
+        icon: 'bx-transfer'
     },
     {
         id: 'drowsiness-ai',
@@ -218,7 +235,8 @@ export const projects: Project[] = [
         technologies: ['OpenCV', 'Jetson Nano', 'Edge AI'],
         images: ['assets/images/projects/drowsiness.jpg'],
         featured: true,
-        category: 'cv'
+        category: 'cv',
+        icon: 'bxs-user-voice'
     },
     {
         id: 'ruma-segmentation',
@@ -229,7 +247,8 @@ export const projects: Project[] = [
         technologies: ['HQ-SAM', 'Computer Vision', 'AI'],
         images: ['assets/images/projects/ruma-seg.jpg'],
         featured: true,
-        category: 'cv'
+        category: 'cv',
+        icon: 'bx-layer'
     },
     {
         id: 'matlab-coins',
@@ -240,7 +259,8 @@ export const projects: Project[] = [
         technologies: ['Matlab', 'Image Processing', 'GUI'],
         images: ['assets/images/projects/coins.jpg'],
         featured: true,
-        category: 'cv'
+        category: 'cv',
+        icon: 'bxs-coin-stack'
     },
     {
         id: 'iot-sensors',
@@ -251,6 +271,7 @@ export const projects: Project[] = [
         technologies: ['ESP32', 'Arduino', 'Sensors', 'Electronics'],
         images: ['assets/images/projects/sensors.jpg'],
         featured: true,
-        category: 'iot'
+        category: 'iot',
+        icon: 'bx-station'
     }
 ];
