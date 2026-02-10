@@ -1,0 +1,155 @@
+@use '../base/variables' as *;
+@use '../utils/mixins' as *;
+
+#experience {
+    position: relative;
+    min-height: 100vh;
+    color: $color-text;
+    padding-top: 10vh;
+    background: radial-gradient(circle at 50% 50%, rgba($color-bg, 0.5) 0%, $color-bg 100%);
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom,
+                transparent,
+                rgba($color-accent-primary, 0.03) 50%,
+                transparent);
+        animation: scanline 8s linear infinite;
+        pointer-events: none;
+        z-index: 1;
+    }
+}
+
+@keyframes scanline {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(200%);
+    }
+}
+
+.experience-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2; // Above 3D scene elements? No, let 3D be visible.
+    // Actually, we want the text to be clickable but the 3D to be behind/interactable.
+    pointer-events: none; // Let events pass to 3D if needed, but card content needs pointer-events: auto.
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 4rem;
+        font-family: $font-family-mono;
+        font-size: 2.5rem;
+        color: $color-accent-primary;
+        text-shadow: 0 0 10px rgba($color-accent-primary, 0.4);
+        pointer-events: auto;
+    }
+}
+
+.timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding-bottom: 4rem;
+
+    .timeline-item {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        pointer-events: auto;
+
+        &.left {
+            justify-content: flex-start;
+            padding-right: 50%; // Leave space for 3D timeline in center
+
+            .content {
+                margin-right: 2rem;
+                transform-origin: right center;
+            }
+        }
+
+        &.right {
+            justify-content: flex-end;
+            padding-left: 50%; // Leave space for 3D timeline in center
+
+            .content {
+                margin-left: 2rem;
+                transform-origin: left center;
+            }
+        }
+
+        .content {
+            background: rgba(15, 15, 15, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba($color-accent-primary, 0.15);
+            padding: 2rem;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            z-index: 5;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+            &:hover {
+                transform: scale(1.02);
+                border-color: $color-accent-primary;
+                box-shadow: 0 0 20px rgba($color-accent-primary, 0.2);
+            }
+
+            h3 {
+                color: $color-text;
+                margin-bottom: 0.5rem;
+                font-size: 1.4rem;
+            }
+
+            h4 {
+                color: $color-accent-secondary;
+                margin-bottom: 0.5rem;
+                font-family: $font-family-mono;
+                font-size: 1rem;
+            }
+
+            .date {
+                display: block;
+                font-size: 0.9rem;
+                color: rgba($color-text, 0.6);
+                margin-bottom: 1rem;
+                font-style: italic;
+            }
+
+            p {
+                margin-bottom: 1.5rem;
+                line-height: 1.6;
+                color: rgba($color-text, 0.9);
+            }
+
+            .tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                list-style: none;
+
+                li {
+                    background: rgba($color-accent-secondary, 0.1);
+                    color: $color-accent-secondary;
+                    padding: 0.3rem 0.8rem;
+                    border-radius: 50px;
+                    font-size: 0.8rem;
+                    border: 1px solid rgba($color-accent-secondary, 0.3);
+                }
+            }
+        }
+    }
+}

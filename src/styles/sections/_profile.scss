@@ -1,0 +1,110 @@
+@use '@/styles/base/variables' as *;
+@use '@/styles/utils/mixins' as *;
+
+.profile-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center; // Middle
+    align-items: center; // Center vertically
+    pointer-events: none; // Let clicks pass through to 3D if needed, but bio-card catches them
+
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        z-index: $z-ui;
+        pointer-events: auto;
+    }
+
+    .bio-card {
+        background: rgba($color-bg, 0.6);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba($color-accent-primary, 0.2);
+        padding: 2rem;
+        border-radius: 12px;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+        h3 {
+            font-family: $font-family-mono;
+            color: $color-accent-primary;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            color: $color-text;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+
+            strong {
+                color: $color-accent-secondary;
+            }
+        }
+
+        .details {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            border-top: 1px solid rgba($color-text, 0.1);
+            padding-top: 1rem;
+
+            li {
+                margin-bottom: 0.5rem;
+                color: rgba($color-text, 0.8);
+                font-family: $font-family-mono;
+                font-size: 0.9rem;
+
+                span {
+                    color: $color-accent-primary;
+                    font-weight: bold;
+                    margin-right: 0.5rem;
+                }
+            }
+        }
+    }
+
+    .skills-legend {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .skill-tag {
+            padding: 0.5rem 1rem;
+            background: rgba($color-bg, 0.8);
+            border: 1px solid rgba($color-text, 0.1);
+            border-radius: 20px;
+            font-family: $font-family-mono;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+
+            &.lang {
+                border-color: #00d4ff;
+                color: #00d4ff;
+            }
+
+            &.ai {
+                border-color: #00ff88;
+                color: #00ff88;
+            }
+
+            &.iot {
+                border-color: #ffaa00;
+                color: #ffaa00;
+            }
+
+            &.hw {
+                border-color: #bd00ff;
+                color: #bd00ff;
+            }
+        }
+    }
+}
